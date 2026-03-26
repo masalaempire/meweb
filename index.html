@@ -30,8 +30,253 @@
             pianist (ABRSM Grade 8), a space flight simulation enthusiast and the first president of Masala Empire.
         </p>
     </section>
+<div id="fsd-overlay" style="position: fixed; inset: 0; background: #000; z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease-out;">
+    <div style="width: 80px; height: 80px; border: 1px solid #33FFFF; border-radius: 50%; position: relative; animation: fsd-pulse 2s infinite;"></div>
+    <div class="mt-8 mono text-[#33FFFF] text-[10px] tracking-[0.5em] animate-pulse">FSD CHARGING</div>
+    <div style="width: 192px; height: 1px; background: #1a1a1a; margin-top: 16px;">
+        <div id="fsd-bar" style="height: 100%; background: #33FFFF; width: 0%; transition: all 2500ms ease-in;"></div>
+    </div>
+</div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<div id="hologram-hud" style="position: fixed; inset: 0; pointer-events: none; z-index: 50; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 255, 255, 0.02) 50%); background-size: 100% 4px; opacity: 0.5;"></div>
+
+<div id="nuclear-widget" class="hidden xl:flex fixed top-24 right-8 w-52 flex-col bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden p-4 group hover:border-red-500 transition-all duration-500">
+    <div class="mb-4">
+        <h3 class="text-[9px] uppercase tracking-[0.2em] text-gray-400 font-bold mb-1">Oracle Systems</h3>
+        <div id="widget-title" class="text-[#FF00FF] font-bold text-xs uppercase">Masala's God Number Generator</div>
+    </div>
+
+    <div class="space-y-3 mb-4 text-left">
+        <div class="flex flex-col">
+            <label class="text-[9px] mono text-gray-400 uppercase mb-1 font-bold">Min</label>
+            <input type="number" id="min-val" value="1" class="bg-gray-50 border-none text-xs p-2 rounded mono focus:ring-1 focus:ring-[#33FFFF] outline-none">
+        </div>
+        <div class="flex flex-col">
+            <label class="text-[9px] mono text-gray-400 uppercase mb-1 font-bold">Max</label>
+            <input type="number" id="max-val" value="50" class="bg-gray-50 border-none text-xs p-2 rounded mono focus:ring-1 focus:ring-[#33FFFF] outline-none">
+        </div>
+    </div>
+
+    <div class="relative h-12">
+        <button id="converse-btn" onclick="startSlotMachine()" class="absolute inset-0 w-full bg-[#33FFFF] text-[#FF00FF] font-bold rounded-lg text-xs uppercase tracking-widest hover:bg-[#00FFCC] active:scale-95 transition-all">
+            Converse
+        </button>
+        <button id="launch-btn" onclick="ballisticLaunch()" class="absolute inset-0 w-full bg-red-600 text-white font-bold rounded-lg text-xs uppercase tracking-widest hover:bg-red-700 opacity-0 pointer-events-none transition-all duration-500 shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+            🚀 LAUNCH
+        </button>
+    </div>
+
+    <div class="mt-4 pt-4 border-t border-gray-50 flex justify-center items-end h-12 overflow-hidden">
+        <div id="reels-container" class="flex gap-1 items-center">
+            <div class="text-3xl font-bold mono text-gray-200">--</div>
+        </div>
+    </div>
+    <p id="status-text" class="text-[8px] mono text-gray-400 mt-2 text-center uppercase tracking-widest">Systems Nominal</p>
+</div>
+
+<style>
+    @keyframes fsd-pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.8); opacity: 0; } }
+    @keyframes silo-shake { 0%, 100% { transform: translate(0,0); } 25% { transform: translate(-2px, 2px); } 75% { transform: translate(2px, -2px); } }
+    .animate-shake { animation: silo-shake 0.1s infinite; }
+    
+    /* 3. DAMAGE STYLES */
+    .glitch-tilt { transform: rotate(1.5deg) skewX(2deg); filter: hue-rotate(90deg) blur(0.8px); transition: transform 0.3s; }
+    .glitch-heavy { filter: invert(0.1) sepia(1) saturate(5) hue-rotate(175deg); animation: extreme-shake 0.1s infinite; }
+    @keyframes extreme-shake { 0% { transform: translate(1px, 1px); } 50% { transform: translate(-1px, -1px); } 100% { transform: translate(1px, -1px); } }
+
+    .icbm { position: fixed; font-size: 32px; z-index: 9998; pointer-events: none; filter: drop-shadow(0 0 8px orange); }
+    .detonation { position: fixed; font-size: 140px; z-index: 9999; pointer-events: none; transform: translate(-50%, -50%) scale(0); animation: explode-anim 0.6s ease-out forwards; }
+    @keyframes explode-anim {
+        0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+        50% { transform: translate(-50%, -50%) scale(1.8); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+    }
+</style>
+
+<script>
+    // --- 1. WITCHSPACE (FSD) LOGIC ---
+    window.addEventListener('load', () => {
+        const bar = document.getElementById('fsd-bar');
+        const overlay = document.getElementById('fsd-overlay');
+        setTimeout(() => { bar.style.width = '100%'; }, 100);
+        setTimeout(() => {
+            overlay.style.opacity = '0';
+            setTimeout(() => { overlay.style.display = 'none'; }, 800);
+        }, 2800);
+    });
+
+    let isRolling = false;
+    let finalPayload = 0;
+    let munitionsLeft = 0;
+
+    // --- 3. DAMAGE ENGINE ---
+    function applyStructuralDamage(x, y) {
+        const hitZone = document.elementsFromPoint(x, y);
+        hitZone.forEach(el => {
+            // Target sections or major divs to glitch them out
+            if (el.tagName === 'SECTION' || el.tagName === 'HEADER' || (el.tagName === 'DIV' && el.classList.contains('border'))) {
+                el.classList.add('glitch-tilt');
+                if (Math.random() > 0.7) el.classList.add('glitch-heavy');
+                
+                document.getElementById('status-text').innerHTML = `<button onclick="location.reload()" class="text-red-600 font-bold animate-pulse">⚠️ REPAIR MODULES</button>`;
+            }
+        });
+    }
+
+    // --- BALLISTIC LOGIC ---
+    function startSlotMachine() {
+        if (isRolling) return;
+        const min = parseInt(document.getElementById('min-val').value);
+        const max = parseInt(document.getElementById('max-val').value);
+        const container = document.getElementById('reels-container');
+        const btn = document.getElementById('converse-btn');
+        const status = document.getElementById('status-text');
+
+        isRolling = true;
+        btn.disabled = true;
+        status.innerText = "Targeting...";
+
+        const array = new Uint32Array(1);
+        window.crypto.getRandomValues(array);
+        finalPayload = Math.floor((array[0] / (0xffffffff + 1)) * (max - min + 1)) + min;
+        munitionsLeft = finalPayload;
+
+        container.innerHTML = '';
+        const reels = [];
+        const finalStr = finalPayload.toString();
+
+        for (let i = 0; i < finalStr.length; i++) {
+            const reel = document.createElement('div');
+            reel.className = "text-3xl font-bold mono text-[#33FFFF] blur-[1px]";
+            reel.innerText = Math.floor(Math.random() * 10);
+            container.appendChild(reel);
+            reels.push(reel);
+        }
+
+        reels.forEach((reel, index) => {
+            let flickers = 0;
+            const interval = setInterval(() => {
+                reel.innerText = Math.floor(Math.random() * 10);
+                if (++flickers >= 15 + index * 10) {
+                    clearInterval(interval);
+                    reel.innerText = finalStr[index];
+                    reel.style.filter = "none";
+                    reel.classList.replace('text-[#33FFFF]', 'text-gray-800');
+                    if (index === reels.length - 1) {
+                        document.getElementById('launch-btn').classList.remove('opacity-0', 'pointer-events-none');
+                        document.getElementById('launch-btn').classList.add('opacity-100', 'pointer-events-auto');
+                        status.innerText = "COVA: Oracle Ready";
+                        isRolling = false;
+                    }
+                }
+            }, 60);
+        });
+    }
+
+    function ballisticLaunch() {
+        const silo = document.getElementById('launch-btn');
+        const converseBtn = document.getElementById('converse-btn');
+        const widget = document.getElementById('nuclear-widget');
+        const status = document.getElementById('status-text');
+        const container = document.getElementById('reels-container');
+        
+        silo.disabled = true;
+        widget.classList.add('animate-shake');
+        status.innerText = "COVA: Engaging Targets";
+
+        const siloRect = silo.getBoundingClientRect();
+        const startX = siloRect.left + (siloRect.width / 2);
+        const startY = siloRect.top;
+
+        // Fire the rockets
+        for (let i = 0; i < finalPayload; i++) {
+            setTimeout(() => {
+                fireRocket(startX, startY);
+                munitionsLeft--;
+                container.innerHTML = `<div class="text-3xl font-bold mono text-red-600 animate-pulse">${munitionsLeft}</div>`;
+            }, i * 60);
+        }
+
+        // --- THE SOFT RESET LOGIC (No Auto-Refresh) ---
+        const totalLaunchTime = (finalPayload * 60) + 1500; 
+
+        setTimeout(() => {
+            widget.classList.remove('animate-shake');
+            container.innerHTML = `<div class="text-xl font-bold mono text-gray-400">EMPTY</div>`;
+            status.innerText = "Silo Depleted. Recycling...";
+            
+            // Wait 3 seconds, then return the buttons to original state
+            setTimeout(() => {
+                // 1. Hide Red Launch Button
+                silo.classList.add('opacity-0', 'pointer-events-none');
+                silo.classList.remove('opacity-100', 'pointer-events-auto');
+                silo.disabled = false; // Re-enable for next time
+                
+                // 2. Show Blue Converse Button
+                converseBtn.disabled = false;
+                converseBtn.classList.remove('opacity-0', 'pointer-events-none');
+                
+                // 3. Reset HUD
+                status.innerText = "Systems Nominal";
+                container.innerHTML = `<div class="text-3xl font-bold mono text-gray-200">--</div>`;
+                
+                // Note: The "Repair" button in status-text will be overwritten 
+                // here unless damage was sustained. 
+            }, 3000);
+        }, totalLaunchTime);
+    }
+
+    // UPDATED REPAIR: Cleans the CSS without refreshing the page
+    function repair() {
+        document.querySelectorAll('.glitch-tilt, .glitch-heavy').forEach(el => {
+            el.classList.remove('glitch-tilt', 'glitch-heavy');
+        });
+        document.getElementById('status-text').innerText = "Integrity Restored";
+        
+        // Brief flicker effect for feedback
+        const hud = document.getElementById('hologram-hud');
+        hud.style.opacity = '1';
+        setTimeout(() => { hud.style.opacity = '0.5'; }, 150);
+    }
+    function fireRocket(startX, startY) {
+        const rocket = document.createElement('div');
+        rocket.className = 'icbm';
+        rocket.innerText = '🚀';
+        document.body.appendChild(rocket);
+
+        rocket.style.left = `${startX}px`;
+        rocket.style.top = `${startY}px`;
+        rocket.style.transform = "rotate(-90deg)";
+
+        const targetX = Math.random() * (window.innerWidth * 0.7);
+        const targetY = 100 + Math.random() * (window.innerHeight - 200);
+
+        requestAnimationFrame(() => {
+            rocket.style.transition = "all 0.6s ease-in";
+            rocket.style.top = `-150px`;
+            
+            setTimeout(() => {
+                rocket.style.transition = "all 0.8s cubic-bezier(0.1, 0.5, 0.8, 1)";
+                rocket.style.transform = "rotate(135deg) scale(1.5)";
+                rocket.style.left = `${targetX}px`;
+                rocket.style.top = `${targetY}px`;
+
+                setTimeout(() => {
+                    const boom = document.createElement('div');
+                    boom.className = 'detonation';
+                    boom.innerText = '💥';
+                    boom.style.left = `${targetX}px`;
+                    boom.style.top = `${targetY}px`;
+                    document.body.appendChild(boom);
+                    
+                    applyStructuralDamage(targetX, targetY);
+                    rocket.remove();
+                    setTimeout(() => boom.remove(), 600);
+                }, 800);
+            }, 600);
+        });
+    }
+</script>   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <section>
             <h2 class="section-title text-sm uppercase tracking-widest text-gray-400 font-bold">Technical</h2>
             <ul class="space-y-2 text-sm text-gray-600 mono">
@@ -51,6 +296,8 @@
             <a href="https://music.apple.com/cn/playlist/eds-songs/pl.u-qxylEMMs2v2DB2R?l=en-GB" class="text-gray-400 hover:underline font-medium">Sheeranism Devotee. ❤️</a>
         </section>
     </div>
+
+
 
     <section class="mb-12">
         <h2 class="section-title text-sm uppercase tracking-widest text-gray-400 font-bold">Me & My Projects</h2>
