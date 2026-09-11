@@ -61,3 +61,20 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .note { padding: 35px; border-radius: 17px; background: var(--ink); color: white; margin-top: 52px; display: flex; justify-content: space-between; gap: 30px; align-items: center; }.note p { color: #c0bfc4; max-width: 520px; }
 .site-footer { border-top: 1px solid var(--line); padding: 25px 0 40px; color: var(--muted); display: flex; justify-content: space-between; font: .68rem "Space Mono", monospace; }
 @media (max-width: 700px) { .shell { width: min(100% - 28px, 1160px); }.about-grid { grid-template-columns: 1fr; gap: 42px; }.project-grid, .interest-grid { grid-template-columns: 1fr; }.section { padding: 72px 0; }.section-top, .note { align-items: flex-start; flex-direction: column; }.contact-item { grid-template-columns: 1fr auto; gap: 8px; }.contact-handle { grid-column: 1; }.nav-links a { padding-inline: 8px; }.brand { font-size: .7rem; }.site-footer { gap: 12px; flex-direction: column; }.landing-main h1 { font-size: clamp(4rem, 21vw, 7rem); } }
+
+/* Welcome page: intentionally a loose constellation, not a tidy menu. */
+.landing-main { min-height: 100svh; padding: 30px; display: grid; place-items: center; overflow: hidden; position: relative; text-align: center; }
+.landing-main h1 { font-size: clamp(3.7rem, 10vw, 9.2rem); letter-spacing: -.1em; line-height: .82; margin: 0; position: relative; z-index: 2; }
+.landing-main h1 span { color: var(--violet); }
+.landing-bubble { position: absolute; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 17px 20px; border: 1px solid var(--ink); border-radius: 50%; background: var(--card); text-align: left; font-size: 1.16rem; font-weight: 700; letter-spacing: -.04em; line-height: 1; box-shadow: 0 10px 0 rgba(16,17,22,.04); transition: transform .22s, box-shadow .22s; }
+.landing-bubble span { font: .61rem "Space Mono", monospace; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }.landing-bubble b { position: absolute; right: 14px; bottom: 12px; color: var(--violet); }
+.landing-bubble:hover { transform: translateY(-7px) rotate(-2deg); box-shadow: 0 18px 25px rgba(16,17,22,.14); }
+.bubble-about { left: max(7vw, 40px); top: 22%; transform: rotate(-7deg); background: var(--acid); }.bubble-contact { right: max(6vw, 38px); top: 29%; transform: rotate(8deg); }.bubble-projects { right: 15%; bottom: 18%; transform: rotate(-5deg); background: #ded2ff; }
+.landing-question { position: absolute; z-index: 2; left: 16%; bottom: 19%; margin: 0; font: 400 clamp(1.3rem, 2vw, 2rem)/1 Georgia, serif; transform: rotate(5deg); }
+.landing-orbit-one { width: min(78vw, 930px); aspect-ratio: 1; }.landing-orbit-two { width: min(55vw, 640px); aspect-ratio: 1; border-style: dashed; transform: rotate(21deg); }
+.howlong { background: #ffdfd7; color: #9a3322; }
+@media (max-width: 700px) {
+  .landing-main { align-content: center; }.landing-main h1 { font-size: clamp(3.4rem, 15vw, 5.5rem); }
+  .landing-bubble { padding: 13px 16px; font-size: .98rem; }.bubble-about { left: 7%; top: 18%; }.bubble-contact { right: 5%; top: 37%; }.bubble-projects { right: 17%; bottom: 19%; }
+  .landing-question { left: 9%; bottom: 14%; }.landing-orbit-one { width: 125vw; }.landing-orbit-two { width: 93vw; }
+}
