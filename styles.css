@@ -7,6 +7,7 @@
   --acid: #c7ff48;
   --violet: #7c52f4;
   --warm: #ff785a;
+  --greenish: #32a88f;
   --shadow: 0 18px 55px rgba(18, 17, 20, .08);
 }
 * { box-sizing: border-box; }
@@ -65,7 +66,7 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 /* Welcome page: intentionally a loose constellation, not a tidy menu. */
 .landing-main { min-height: 100svh; padding: 30px; display: grid; place-items: center; overflow: hidden; position: relative; text-align: center; }
 .landing-main h1 { font-size: clamp(3.7rem, 10vw, 9.2rem); letter-spacing: -.1em; line-height: .82; margin: 0; position: relative; z-index: 2; }
-.landing-main h1 span { color: var(--violet); }
+.landing-main h1 span { color: var(--greenish); }
 .landing-bubble { position: absolute; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 17px 42px 17px 20px; border: 1px solid var(--ink); border-radius: 50%; background: var(--card); text-align: left; font-size: 1.16rem; font-weight: 700; letter-spacing: -.04em; line-height: 1; box-shadow: 0 10px 0 rgba(16,17,22,.04); transition: transform .22s, box-shadow .22s; }
 .landing-bubble span { font: .61rem "Space Mono", monospace; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }.landing-bubble b { position: absolute; right: 14px; bottom: 12px; color: var(--violet); }
 .landing-bubble:hover { transform: translateY(-7px) rotate(-2deg); box-shadow: 0 18px 25px rgba(16,17,22,.14); }
