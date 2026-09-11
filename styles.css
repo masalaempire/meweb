@@ -17,7 +17,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 a { color: inherit; text-decoration: none; }
 .shell { width: min(1160px, calc(100% - 40px)); margin: auto; }
 nav { display: flex; align-items: center; justify-content: space-between; padding: 25px 0; }
-.brand { display: flex; gap: 10px; align-items: center; font-family: "Space Mono", monospace; font-size: .8rem; font-weight: 700; letter-spacing: -.04em; }
+.brand { display: flex; gap: 11px; align-items: center; font-family: "DM Sans", Inter, system-ui, sans-serif; font-size: 1.02rem; font-weight: 700; letter-spacing: -.055em; line-height: 1; }
 .brand-mark { display: grid; place-items: center; width: 29px; height: 29px; background: var(--ink); color: var(--acid); border-radius: 50%; }
 .nav-links { display: flex; gap: 7px; }
 .nav-links a { padding: 7px 12px; border-radius: 100px; color: var(--muted); font-size: .9rem; font-weight: 600; }
@@ -61,7 +61,7 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .contact-item:hover { background: var(--card); padding-inline: 16px; }.contact-name { font: 700 1.3rem/1 "Space Mono", monospace; letter-spacing: -.08em; }.contact-handle { color: var(--muted); }.arrow { font-size: 1.25rem; }
 .note { padding: 35px; border-radius: 17px; background: var(--ink); color: white; margin-top: 52px; display: flex; justify-content: space-between; gap: 30px; align-items: center; }.note p { color: #c0bfc4; max-width: 520px; }
 .site-footer { border-top: 1px solid var(--line); padding: 25px 0 40px; color: var(--muted); display: flex; justify-content: space-between; font: .68rem "Space Mono", monospace; }
-@media (max-width: 700px) { .shell { width: min(100% - 28px, 1160px); }.about-grid { grid-template-columns: 1fr; gap: 42px; }.project-grid, .interest-grid { grid-template-columns: 1fr; }.section { padding: 72px 0; }.section-top, .note { align-items: flex-start; flex-direction: column; }.contact-item { grid-template-columns: 1fr auto; gap: 8px; }.contact-handle { grid-column: 1; }.nav-links a { padding-inline: 8px; }.brand { font-size: .7rem; }.site-footer { gap: 12px; flex-direction: column; }.landing-main h1 { font-size: clamp(4rem, 21vw, 7rem); } }
+@media (max-width: 700px) { .shell { width: min(100% - 28px, 1160px); }.about-grid { grid-template-columns: 1fr; gap: 42px; }.project-grid, .interest-grid { grid-template-columns: 1fr; }.section { padding: 72px 0; }.section-top, .note { align-items: flex-start; flex-direction: column; }.contact-item { grid-template-columns: 1fr auto; gap: 8px; }.contact-handle { grid-column: 1; }.nav-links a { padding-inline: 8px; }.brand { font-size: .92rem; }.site-footer { gap: 12px; flex-direction: column; }.landing-main h1 { font-size: clamp(4rem, 21vw, 7rem); } }
 
 /* Welcome page: intentionally a loose constellation, not a tidy menu. */
 .landing-main { min-height: 100svh; padding: 30px; display: grid; place-items: center; overflow: hidden; position: relative; text-align: center; }
