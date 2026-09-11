@@ -66,11 +66,11 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .landing-main { min-height: 100svh; padding: 30px; display: grid; place-items: center; overflow: hidden; position: relative; text-align: center; }
 .landing-main h1 { font-size: clamp(3.7rem, 10vw, 9.2rem); letter-spacing: -.1em; line-height: .82; margin: 0; position: relative; z-index: 2; }
 .landing-main h1 span { color: var(--violet); }
-.landing-bubble { position: absolute; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 17px 20px; border: 1px solid var(--ink); border-radius: 50%; background: var(--card); text-align: left; font-size: 1.16rem; font-weight: 700; letter-spacing: -.04em; line-height: 1; box-shadow: 0 10px 0 rgba(16,17,22,.04); transition: transform .22s, box-shadow .22s; }
+.landing-bubble { position: absolute; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 17px 42px 17px 20px; border: 1px solid var(--ink); border-radius: 50%; background: var(--card); text-align: left; font-size: 1.16rem; font-weight: 700; letter-spacing: -.04em; line-height: 1; box-shadow: 0 10px 0 rgba(16,17,22,.04); transition: transform .22s, box-shadow .22s; }
 .landing-bubble span { font: .61rem "Space Mono", monospace; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }.landing-bubble b { position: absolute; right: 14px; bottom: 12px; color: var(--violet); }
 .landing-bubble:hover { transform: translateY(-7px) rotate(-2deg); box-shadow: 0 18px 25px rgba(16,17,22,.14); }
 .bubble-about { left: max(7vw, 40px); top: 22%; transform: rotate(-7deg); background: var(--acid); }.bubble-contact { right: max(6vw, 38px); top: 29%; transform: rotate(8deg); }.bubble-projects { right: 15%; bottom: 18%; transform: rotate(-5deg); background: #ded2ff; }
-.landing-question { position: absolute; z-index: 2; left: 16%; bottom: 19%; margin: 0; font: 400 clamp(1.3rem, 2vw, 2rem)/1 Georgia, serif; transform: rotate(5deg); }
+.landing-question { position: absolute; z-index: 2; left: 16%; bottom: 19%; margin: 0; font: 600 clamp(1.7rem, 2.8vw, 2.6rem)/.9 "Caveat", cursive; transform: rotate(5deg); }
 .landing-orbit-one { width: min(78vw, 930px); aspect-ratio: 1; }.landing-orbit-two { width: min(55vw, 640px); aspect-ratio: 1; border-style: dashed; transform: rotate(21deg); }
 .howlong { background: #ffdfd7; color: #9a3322; }
 @media (max-width: 700px) {
