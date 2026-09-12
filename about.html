@@ -23,6 +23,7 @@
     <article class="sticky-note" tabindex="0"><span>games with knobs</span><strong>Derail Valley</strong><p>Hardware throttle controls<br>make it better.</p></article>
     <article class="sticky-note" tabindex="0"><span>Minecraft</span><strong>redstone routes</strong><p>Command blocks, transport<br>networks, the whole thing.</p></article>
     <article class="sticky-note" tabindex="0"><span>design &amp; books</span><strong>spare / industrial</strong><p>Into the Wild, Calvino,<br>Hemingway.</p></article>
+    <article class="sticky-note sticky-title" tabindex="0"><strong>Here’s the<br>things I like.</strong></article>
   </div>
 
   <div class="about-thread">
@@ -60,6 +61,11 @@
         const noteBox = note.getBoundingClientRect();
         offsetX = event.clientX - noteBox.left;
         offsetY = event.clientY - noteBox.top;
+        const boardBox = board.getBoundingClientRect();
+        note.style.left = (noteBox.left - boardBox.left) + 'px';
+        note.style.top = (noteBox.top - boardBox.top) + 'px';
+        note.style.right = 'auto';
+        note.style.bottom = 'auto';
         note.style.zIndex = ++z;
         note.classList.add('is-dragging');
         note.setPointerCapture(event.pointerId);
