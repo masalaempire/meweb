@@ -79,3 +79,50 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
   .landing-bubble { padding: 13px 16px; font-size: .98rem; }.bubble-about { left: 7%; top: 18%; }.bubble-contact { right: 5%; top: 37%; }.bubble-projects { right: 17%; bottom: 19%; }
   .landing-question { left: 9%; bottom: 14%; }.landing-orbit-one { width: 125vw; }.landing-orbit-two { width: 93vw; }
 }
+
+
+/* About page: a looser, image-led companion to the orbit-shaped homepage. */
+.about-refresh { padding-bottom: 40px; }
+.about-hero { min-height: 520px; padding: 78px 0 72px; position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 260px; align-items: end; gap: 46px; }
+.about-hero::before { content: ""; position: absolute; width: min(49vw, 565px); aspect-ratio: 1; border: 1px solid var(--line); border-radius: 48% 52% 46% 54%; top: 57px; left: -96px; transform: rotate(-15deg); pointer-events: none; }
+.about-hero::after { content: ""; position: absolute; width: min(30vw, 350px); aspect-ratio: 1; border: 1px dashed var(--line); border-radius: 50%; top: 148px; left: 76px; transform: rotate(18deg); pointer-events: none; }
+.about-hero > * { position: relative; z-index: 1; }
+.about-hero h1 { margin: 14px 0 0; font-size: clamp(3.7rem, 8vw, 7.2rem); line-height: .83; letter-spacing: -.1em; }
+.about-hero h1 em { font-style: normal; color: var(--greenish); }
+.hero-note { max-width: 250px; margin: 0 0 10px; color: var(--muted); font-size: 1rem; line-height: 1.6; }
+.scribble { position: absolute; right: 24px; top: 68px; color: var(--ink); font: 600 1.45rem/.88 "Caveat", cursive; transform: rotate(8deg); }
+.about-intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; padding: 44px 0 105px; border-top: 1px solid var(--line); }
+.about-intro > p { font: 400 clamp(1.65rem, 3vw, 2.5rem)/1.05 Georgia, serif; letter-spacing: -.06em; margin: 0; }
+.about-intro > div > p { color: var(--muted); max-width: 530px; margin: 0; font-size: 1.04rem; }
+.mini-facts { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 9px; }
+.mini-facts span, .tag-row span { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; color: var(--muted); background: var(--card); font: .65rem "Space Mono", monospace; }
+.signal-section { padding: 20px 0 96px; }
+.signal-heading { margin-bottom: 42px; }
+.signal-heading > p { max-width: 260px; margin: 0 0 5px; color: var(--muted); font-size: .96rem; }
+.signal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; align-items: start; }
+.signal-card { position: relative; min-height: 550px; overflow: hidden; border: 1px solid var(--line); border-radius: 26px; padding: 21px; background: var(--card); transition: transform .25s, box-shadow .25s; }
+.signal-card:hover { transform: translateY(-7px) rotate(-.7deg); box-shadow: var(--shadow); }
+.signal-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: .65rem "Space Mono", monospace; color: var(--violet); letter-spacing: .06em; }
+.signal-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: var(--acid); font: 1.2rem/1 "DM Sans", sans-serif; }
+.signal-card h3 { margin: 27px 0 10px; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: .91; letter-spacing: -.075em; }
+.signal-card p { margin: 0; color: var(--muted); font-size: .92rem; }
+.signal-code { background: #ded2ff; border-color: #bfacf8; transform: rotate(-1.3deg); }
+.signal-code:hover { transform: translateY(-7px) rotate(-2deg); }
+.terminal-snippet { display: flex; flex-direction: column; gap: 6px; min-height: 142px; margin-top: 41px; padding: 17px; border: 1px solid #2e2459; border-radius: 13px; background: #242030; color: #c7ff48; font: .68rem/1.4 "Space Mono", monospace; box-shadow: 7px 7px 0 rgba(67, 41, 142, .18); }
+.terminal-snippet span:nth-child(2) { color: #e3dbff; }.terminal-snippet span:nth-child(3) { color: #ffac9c; }
+.signal-code .tag-row { margin-top: 29px; display: flex; flex-wrap: wrap; gap: 7px; }
+.signal-code .tag-row span { background: rgba(255,255,255,.45); border-color: rgba(45, 30, 93, .26); color: #432982; }
+.signal-photo { height: 205px; margin: -21px -21px 20px; overflow: hidden; background: #d9d6cc; }
+.signal-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.signal-card:hover .signal-photo img { transform: scale(1.05); }
+.signal-music { background: #ffdfd7; border-color: #f0b9ae; transform: rotate(1.1deg); }
+.signal-music:hover { transform: translateY(-7px) rotate(1.8deg); }
+.signal-music .signal-photo img { object-position: center 35%; }
+.signal-space { background: #c9f0eb; border-color: #9ddbd1; }
+.signal-space .signal-photo { background: #101116; }.signal-space .signal-photo img { object-position: center; }
+.photo-credit { position: absolute; bottom: 20px; left: 21px; right: 21px; color: var(--muted); font: .59rem/1.35 "Space Mono", monospace; text-decoration: underline; text-underline-offset: 3px; }
+.about-signoff { display: grid; grid-template-columns: 1fr minmax(200px, .7fr) auto; align-items: end; gap: 35px; padding: 40px; border-radius: 25px; background: var(--ink); color: white; }
+.about-signoff h2 { margin: 9px 0 0; font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: .96; letter-spacing: -.065em; }
+.about-signoff p { max-width: 280px; margin: 0; color: #c0bfc4; font-size: .94rem; }
+@media (max-width: 850px) { .signal-grid { grid-template-columns: 1fr; max-width: 520px; }.signal-card { min-height: 470px; }.signal-photo { height: 240px; }.about-signoff { grid-template-columns: 1fr; align-items: start; }.about-signoff p { max-width: 500px; } }
+@media (max-width: 700px) { .about-hero { min-height: auto; grid-template-columns: 1fr; padding: 65px 0 80px; gap: 31px; }.about-hero::before { width: 95vw; left: -45vw; top: 20px; }.about-hero::after { width: 65vw; left: -7vw; top: 93px; }.about-hero h1 { font-size: clamp(3.55rem, 16vw, 5.7rem); }.hero-note { max-width: 310px; }.scribble { right: 0; top: 31px; font-size: 1.25rem; }.about-intro { grid-template-columns: 1fr; gap: 34px; padding-bottom: 75px; }.signal-heading { align-items: flex-start; }.signal-heading > p { margin-top: 0; }.signal-card { min-height: 490px; }.about-signoff { padding: 29px; gap: 22px; } }
