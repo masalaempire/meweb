@@ -12,14 +12,17 @@
     <p>I’m a student who spends a good amount of time writing code, playing piano, and travelling through space games at a very non-physical speed.</p>
   </div>
 
-  <div class="about-canvas" aria-label="A few things that say something about Simon">
-    <p class="canvas-caption">A few things I tend to keep nearby</p>
-    <div class="canvas-code"><span>usually open</span><code>Python · C++<br>+ a half-finished idea</code></div>
-    <a class="canvas-music" href="https://music.apple.com/cn/playlist/eds-songs/pl.u-qxylEMMs2v2DB2R?l=en-GB" target="_blank" rel="noreferrer"><span>now playing</span><strong>Ed Sheeran,<br>probably</strong><i>↗</i></a>
-    <div class="canvas-piano"><span>88 keys</span><b>piano is<br>still home</b></div>
-    <a class="canvas-flight" href="https://simonlm.space" target="_blank" rel="noreferrer"><span>flight log</span><strong>CMDR SimonLM</strong><em>Elite Dangerous<br>&amp; Star Citizen</em><i>↗</i></a>
-    <a class="canvas-project" href="projects.html"><span>small things<br>i’ve made</span><b>have a look →</b></a>
-    <p class="canvas-scribble">keyboard keys, piano keys,<br>ship keys. nice.</p>
+  <div class="about-canvas sticky-board" aria-label="Things Simon is into — drag the notes around">
+    <article class="sticky-note" tabindex="0"><span>code &amp; systems</span><strong>C++</strong><p>Competitive programming<br>on Luogu + USACO.</p></article>
+    <article class="sticky-note" tabindex="0"><span>on the web</span><strong>simonlm.one</strong><p>Personal projects on<br>Cloudflare Pages + Workers.</p></article>
+    <article class="sticky-note" tabindex="0"><span>macOS thing</span><strong>LMSwitch</strong><p>A little native tool,<br>written in Swift.</p></article>
+    <article class="sticky-note" tabindex="0"><span>piano</span><strong>ABRSM Grade 8</strong><p>Roland RD-88EX,<br>plus arrangements I like.</p></article>
+    <article class="sticky-note" tabindex="0"><span>currently / always</span><strong>Ed Sheeran</strong><p>+ &nbsp; x &nbsp; ÷ &nbsp; = &nbsp; −<br>on vinyl.</p></article>
+    <article class="sticky-note" tabindex="0"><span>record player</span><strong>AT-LPW50BT</strong><p>Manual turntable.<br>Worth the little ritual.</p></article>
+    <article class="sticky-note sticky-dark" tabindex="0"><span>flight log</span><strong>CMDR SimonLM</strong><p>Fleet Carrier / Panther Clipper<br>somewhere in Elite Dangerous.</p></article>
+    <article class="sticky-note" tabindex="0"><span>games with knobs</span><strong>Derail Valley</strong><p>Hardware throttle controls<br>make it better.</p></article>
+    <article class="sticky-note" tabindex="0"><span>Minecraft</span><strong>redstone routes</strong><p>Command blocks, transport<br>networks, the whole thing.</p></article>
+    <article class="sticky-note" tabindex="0"><span>design &amp; books</span><strong>spare / industrial</strong><p>Into the Wild, Calvino,<br>Hemingway.</p></article>
   </div>
 
   <div class="about-thread">
@@ -32,4 +35,39 @@
     <div><a href="https://github.com/masalaempire" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:simonlm@simonlm.one">Email ↗</a><a href="contact.html">Everywhere else →</a></div>
   </div>
 </main>
+<script>
+  (() => {
+    const board = document.querySelector('.sticky-board');
+    if (!board) return;
+    let z = 20;
+    board.querySelectorAll('.sticky-note').forEach((note) => {
+      let offsetX = 0, offsetY = 0;
+      const move = (event) => {
+        const boardBox = board.getBoundingClientRect();
+        const maxX = Math.max(0, boardBox.width - note.offsetWidth);
+        const maxY = Math.max(0, boardBox.height - note.offsetHeight);
+        const x = Math.min(maxX, Math.max(0, event.clientX - boardBox.left - offsetX));
+        const y = Math.min(maxY, Math.max(0, event.clientY - boardBox.top - offsetY));
+        note.style.left = x + 'px';
+        note.style.top = y + 'px';
+      };
+      const end = () => {
+        note.classList.remove('is-dragging');
+        note.removeEventListener('pointermove', move);
+      };
+      note.addEventListener('pointerdown', (event) => {
+        if (event.button !== 0) return;
+        const noteBox = note.getBoundingClientRect();
+        offsetX = event.clientX - noteBox.left;
+        offsetY = event.clientY - noteBox.top;
+        note.style.zIndex = ++z;
+        note.classList.add('is-dragging');
+        note.setPointerCapture(event.pointerId);
+        note.addEventListener('pointermove', move);
+        note.addEventListener('pointerup', end, { once: true });
+        note.addEventListener('pointercancel', end, { once: true });
+      });
+    });
+  })();
+</script>
 <footer class="site-footer"><span>© 2026 SimonLM</span><span>Made with intent &amp; a little chaos.</span></footer></div></body></html>
