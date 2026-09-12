@@ -79,3 +79,14 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
   .landing-bubble { padding: 13px 16px; font-size: .98rem; }.bubble-about { left: 7%; top: 18%; }.bubble-contact { right: 5%; top: 37%; }.bubble-projects { right: 17%; bottom: 19%; }
   .landing-question { left: 9%; bottom: 14%; }.landing-orbit-one { width: 125vw; }.landing-orbit-two { width: 93vw; }
 }
+
+/* A lighter, more playful About page. */
+.about-head { padding-bottom: 48px; }.about-head h1 { max-width: 650px; }
+.about-focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; align-items: start; padding: 12px 0 68px; }
+.focus-card { min-height: 385px; display: flex; flex-direction: column; justify-content: space-between; padding: 23px; border: 1px solid var(--ink); border-radius: 22px; box-shadow: 0 11px 0 rgba(16,17,22,.08); transition: transform .22s, box-shadow .22s; }
+.focus-card:hover { transform: translateY(-9px) rotate(0deg); box-shadow: 0 21px 0 rgba(16,17,22,.1); }
+.focus-code { background: var(--acid); transform: rotate(-2.5deg); }.focus-music { background: #dcd2ff; transform: rotate(2deg); margin-top: 32px; }.focus-space { background: #17161f; color: #fff; transform: rotate(-1deg); margin-top: 9px; }
+.focus-mark { width: 68px; height: 68px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font: 700 1.45rem "Space Mono", monospace; }.focus-space .focus-mark { color: var(--acid); }
+.focus-card span { font: .68rem "Space Mono", monospace; letter-spacing: .08em; }.focus-card h2 { margin: 14px 0 8px; font-size: clamp(2.25rem, 4vw, 3.4rem); line-height: .88; letter-spacing: -.08em; }.focus-card p { margin: 0; font-size: .95rem; line-height: 1.4; }.focus-space p { color: #d0ced7; }
+.about-signoff { margin: 0 0 100px; font: 600 clamp(1.5rem, 2.8vw, 2.25rem)/1 "Caveat", Georgia, serif; color: var(--violet); transform: rotate(-1deg); }
+@media (max-width: 800px) { .about-focus { grid-template-columns: 1fr; padding-bottom: 52px; }.focus-card, .focus-music, .focus-space { min-height: 255px; margin-top: 0; transform: none; }.focus-card:hover { transform: translateY(-6px); } }
