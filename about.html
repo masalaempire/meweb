@@ -3,20 +3,43 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About Me — SimonLM</title><meta name="description" content="A little about SimonLM.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
 </head><body><div class="shell">
 <nav><a class="brand" href="index.html"><span class="brand-mark">S</span>SIMONLM</a><div class="nav-links"><a class="active" href="about.html">About me</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div></nav>
-<main><header class="page-head"><div class="eyebrow">The human behind the tabs</div><h1>Hi, I’m Simon.</h1><p>I like making things, learning how stuff works, and getting a little too invested in hobbies. A very normal amount, obviously.</p></header>
-<section class="about-grid about-page">
-<p class="about-copy">I’m into code, music, machines, and the kind of games where “just one more jump” can turn into a whole evening.</p>
-<div class="about-detail"><p>On the code side, I spend a lot of time with <strong>Python</strong>, <strong>C++</strong>, and web tech. I like the feeling of taking an idea that is slightly annoying to do by hand and turning it into a tool. Bonus points if it has a nice little interface.</p><p>I’m also into robotics and hardware — mostly because making real-world objects listen to your code is still kind of magic. Occasionally the magic is smoke, but that’s part of the learning process.</p></div>
-</section>
-<section class="section interests"><div class="section-top"><div><div class="eyebrow">Things I genuinely love</div><h2>My usual<br>rabbit holes.</h2></div></div>
-<div class="interest-grid">
-<article class="interest-card"><span>01 / CODE</span><h3>Python &amp; C++</h3><p>From neat little scripts to competitive-programming brain teasers. I enjoy making computers do the boring bits — politely, of course.</p></article>
-<article class="interest-card"><span>02 / MUSIC</span><h3>Piano &amp; Ed Sheeran</h3><p>Classically trained pianist, enthusiastic music mixer, and unapologetic Sheeranism devotee. Yes, the playlist probably has one more song.</p></article>
-<article class="interest-card"><span>03 / MAKING</span><h3>Robotics &amp; hardware</h3><p>I love messing with the physical side of technology: building, modding, optimising, and seeing whether the plan survives contact with reality.</p></article>
-<article class="interest-card"><span>04 / SPACE</span><h3>ED &amp; Star Citizen</h3><p>When I’m not at a keyboard, I’m often at a different keyboard, flying around Elite Dangerous or Star Citizen. Space is big. My backlog is bigger.</p></article>
-</div></section>
-<section class="note"><div><div class="eyebrow" style="color:#c7ff48">The short version</div><h2 style="margin:8px 0 0;font-size:2rem">Curious by default.</h2><p>I’m always happy to trade ideas, music recommendations, or the occasional hot take about which spaceship has the best cockpit.</p></div><a class="button acid" href="contact.html">Find me online →</a></section>
-</main><footer class="site-footer"><span>© 2026 SimonLM</span><span>Made with intent &amp; a little chaos.</span></footer></div></body></html>
+<main class="about-editorial">
+  <header class="about-intro">
+    <div class="eyebrow">A little corner of the internet</div>
+    <h1>Hi, I’m Simon.</h1>
+    <p>I’m a student who likes code, piano, and games with far too many buttons in the cockpit. This is the short version of me — no résumé voice required.</p>
+  </header>
+
+  <section class="about-interests" aria-labelledby="interests-title">
+    <div class="section-label"><span>01</span><h2 id="interests-title">Things I’m into</h2></div>
+    <div class="interest-lines">
+      <article><span class="interest-number">01</span><div><h3>Code</h3><p>Python, C++, web things, and the joy of making a small tool because doing it by hand once was already enough.</p></div></article>
+      <article><span class="interest-number">02</span><div><h3>Music</h3><p>Piano first, then whatever I’m listening to while I work. Ed Sheeran has been in the rotation for a very long time.</p></div></article>
+      <article><span class="interest-number">03</span><div><h3>Space games</h3><p>Elite Dangerous and Star Citizen — for when I want to travel several light years instead of answering an email.</p></div></article>
+    </div>
+  </section>
+
+  <section class="about-desk" aria-labelledby="desk-title">
+    <div class="section-label"><span>02</span><h2 id="desk-title">A few things on my desk</h2></div>
+    <div class="desk-surface">
+      <a class="desk-music" href="https://music.apple.com/cn/playlist/eds-songs/pl.u-qxylEMMs2v2DB2R?l=en-GB" target="_blank" rel="noreferrer"><span>Now playing</span><strong>Ed Sheeran, probably</strong><i>↗</i></a>
+      <div class="desk-code"><span>tiny rule of thumb</span><code>if (it seems fun)<br>&nbsp;&nbsp;make it;</code></div>
+      <a class="desk-flight" href="https://simonlm.space" target="_blank" rel="noreferrer"><span>Flight log</span><strong>CMDR SimonLM</strong><em>somewhere out there</em><i>↗</i></a>
+      <p class="desk-scribble">Piano keys, keyboard keys,<br>ship keys. Similar enough.</p>
+    </div>
+  </section>
+
+  <section class="about-story" aria-labelledby="story-title">
+    <div class="section-label"><span>03</span><h2 id="story-title">How I got here</h2></div>
+    <div class="story-copy"><p>I got interested in programming the same way I get interested in most things: I wanted to see if I could make something work. At first it was little experiments, then projects, then the familiar “I’ll just fix one more thing” loop.</p><p>I still like that part best — the moment a vague idea turns into something you can click, hear, run, or accidentally break. Robotics and hardware are a natural extension of that: more wires, more consequences.</p></div>
+  </section>
+
+  <section class="about-closing">
+    <p>That’s me, more or less.</p>
+    <div><a href="https://github.com/masalaempire" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:simonlm@simonlm.one">Email ↗</a><a href="contact.html">Everywhere else →</a></div>
+  </section>
+</main>
+<footer class="site-footer"><span>© 2026 SimonLM</span><span>Made with intent &amp; a little chaos.</span></footer></div></body></html>
