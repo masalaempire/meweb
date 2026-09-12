@@ -3,20 +3,77 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About Me — SimonLM</title><meta name="description" content="A little about SimonLM.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
 </head><body><div class="shell">
 <nav><a class="brand" href="index.html"><span class="brand-mark">S</span>SIMONLM</a><div class="nav-links"><a class="active" href="about.html">About me</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div></nav>
-<main><header class="page-head"><div class="eyebrow">The human behind the tabs</div><h1>Hi, I’m Simon.</h1><p>I like making things, learning how stuff works, and getting a little too invested in hobbies. A very normal amount, obviously.</p></header>
-<section class="about-grid about-page">
-<p class="about-copy">I’m into code, music, machines, and the kind of games where “just one more jump” can turn into a whole evening.</p>
-<div class="about-detail"><p>On the code side, I spend a lot of time with <strong>Python</strong>, <strong>C++</strong>, and web tech. I like the feeling of taking an idea that is slightly annoying to do by hand and turning it into a tool. Bonus points if it has a nice little interface.</p><p>I’m also into robotics and hardware — mostly because making real-world objects listen to your code is still kind of magic. Occasionally the magic is smoke, but that’s part of the learning process.</p></div>
-</section>
-<section class="section interests"><div class="section-top"><div><div class="eyebrow">Things I genuinely love</div><h2>My usual<br>rabbit holes.</h2></div></div>
-<div class="interest-grid">
-<article class="interest-card"><span>01 / CODE</span><h3>Python &amp; C++</h3><p>From neat little scripts to competitive-programming brain teasers. I enjoy making computers do the boring bits — politely, of course.</p></article>
-<article class="interest-card"><span>02 / MUSIC</span><h3>Piano &amp; Ed Sheeran</h3><p>Classically trained pianist, enthusiastic music mixer, and unapologetic Sheeranism devotee. Yes, the playlist probably has one more song.</p></article>
-<article class="interest-card"><span>03 / MAKING</span><h3>Robotics &amp; hardware</h3><p>I love messing with the physical side of technology: building, modding, optimising, and seeing whether the plan survives contact with reality.</p></article>
-<article class="interest-card"><span>04 / SPACE</span><h3>ED &amp; Star Citizen</h3><p>When I’m not at a keyboard, I’m often at a different keyboard, flying around Elite Dangerous or Star Citizen. Space is big. My backlog is bigger.</p></article>
-</div></section>
-<section class="note"><div><div class="eyebrow" style="color:#c7ff48">The short version</div><h2 style="margin:8px 0 0;font-size:2rem">Curious by default.</h2><p>I’m always happy to trade ideas, music recommendations, or the occasional hot take about which spaceship has the best cockpit.</p></div><a class="button acid" href="contact.html">Find me online →</a></section>
-</main><footer class="site-footer"><span>© 2026 SimonLM</span><span>Made with intent &amp; a little chaos.</span></footer></div></body></html>
+<main class="about-composition">
+  <div class="about-opening">
+    <p class="about-hello">Hi, I’m Simon.</p>
+    <p>I’m a student who spends a good amount of time writing code, playing piano, and travelling through space games at a very non-physical speed.</p>
+  </div>
+
+  <div class="about-canvas sticky-board" aria-label="Things Simon is into — drag the notes around">
+    <article class="sticky-note" tabindex="0"><span>code &amp; systems</span><strong>C++</strong><p>Competitive programming<br>on Luogu + USACO.</p></article>
+    <article class="sticky-note" tabindex="0"><span>on the web</span><strong>simonlm.one</strong><p>Personal projects on<br>Cloudflare Pages + Workers.</p></article>
+    <article class="sticky-note" tabindex="0"><span>macOS thing</span><strong>LMSwitch</strong><p>A little native tool,<br>written in Swift.</p></article>
+    <article class="sticky-note" tabindex="0"><span>piano</span><strong>ABRSM Grade 8</strong><p>Roland RD-88EX,<br>plus arrangements I like.</p></article>
+    <article class="sticky-note" tabindex="0"><span>currently / always</span><strong>Ed Sheeran</strong><p>+ &nbsp; x &nbsp; ÷ &nbsp; = &nbsp; −<br>on vinyl.</p></article>
+    <article class="sticky-note" tabindex="0"><span>record player</span><strong>AT-LPW50BT</strong><p>Manual turntable.<br>Worth the little ritual.</p></article>
+    <article class="sticky-note sticky-dark" tabindex="0"><span>flight log</span><strong>CMDR SimonLM</strong><p>Fleet Carrier / Panther Clipper<br>somewhere in Elite Dangerous.</p></article>
+    <article class="sticky-note" tabindex="0"><span>games with knobs</span><strong>Derail Valley</strong><p>Hardware throttle controls<br>make it better.</p></article>
+    <article class="sticky-note" tabindex="0"><span>Minecraft</span><strong>redstone routes</strong><p>Command blocks, transport<br>networks, the whole thing.</p></article>
+    <article class="sticky-note" tabindex="0"><span>design &amp; books</span><strong>spare / industrial</strong><p>Into the Wild, Calvino,<br>Hemingway.</p></article>
+    <article class="sticky-note sticky-title" tabindex="0"><strong>Here’s the<br>things I like.</strong></article>
+  </div>
+
+  <div class="about-thread">
+    <p class="thread-lead">I like building things because it turns curiosity into something you can actually poke at.</p>
+    <div class="thread-copy"><p>I got into programming by wondering whether I could make a computer do one small thing, then another, then another. That has turned into little tools, websites, projects, and the occasional piece of hardware with more wires than dignity.</p><p>The part I still enjoy most is the in-between bit: when something only exists in your head, and you keep nudging it until it starts to work. It doesn’t need to be enormous to be worth making.</p></div>
+  </div>
+
+  <div class="about-ending">
+    <p>That’s me, more or less.</p>
+    <div><a href="https://github.com/masalaempire" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:simonlm@simonlm.one">Email ↗</a><a href="contact.html">Everywhere else →</a></div>
+  </div>
+</main>
+<script>
+  (() => {
+    const board = document.querySelector('.sticky-board');
+    if (!board) return;
+    let z = 20;
+    board.querySelectorAll('.sticky-note').forEach((note) => {
+      let offsetX = 0, offsetY = 0;
+      const move = (event) => {
+        const boardBox = board.getBoundingClientRect();
+        const maxX = Math.max(0, boardBox.width - note.offsetWidth);
+        const maxY = Math.max(0, boardBox.height - note.offsetHeight);
+        const x = Math.min(maxX, Math.max(0, event.clientX - boardBox.left - offsetX));
+        const y = Math.min(maxY, Math.max(0, event.clientY - boardBox.top - offsetY));
+        note.style.left = x + 'px';
+        note.style.top = y + 'px';
+      };
+      const end = () => {
+        note.classList.remove('is-dragging');
+        note.removeEventListener('pointermove', move);
+      };
+      note.addEventListener('pointerdown', (event) => {
+        if (event.button !== 0) return;
+        const noteBox = note.getBoundingClientRect();
+        offsetX = event.clientX - noteBox.left;
+        offsetY = event.clientY - noteBox.top;
+        const boardBox = board.getBoundingClientRect();
+        note.style.left = (noteBox.left - boardBox.left) + 'px';
+        note.style.top = (noteBox.top - boardBox.top) + 'px';
+        note.style.right = 'auto';
+        note.style.bottom = 'auto';
+        note.style.zIndex = ++z;
+        note.classList.add('is-dragging');
+        note.setPointerCapture(event.pointerId);
+        note.addEventListener('pointermove', move);
+        note.addEventListener('pointerup', end, { once: true });
+        note.addEventListener('pointercancel', end, { once: true });
+      });
+    });
+  })();
+</script>
+<footer class="site-footer"><span>© 2026 SimonLM</span><span>Made with intent &amp; a little chaos.</span></footer></div></body></html>
