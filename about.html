@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Me — SimonLM</title>
-  <meta name="description" content="A field guide to SimonLM: code, music, and the things worth making.">
+  <title>About — SimonLM</title>
+  <meta name="description" content="About SimonLM.">
   <link rel="stylesheet" href="inner.css">
 </head>
-<body class="inner-page page-about">
+<body class="inner-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="SimonLM home">
-        <span class="brand-mark">S</span>
-        <span>SIMONLM / FIELD NOTES</span>
-      </a>
+      <a class="brand" href="index.html">SimonLM</a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="about.html" aria-current="page">About</a>
         <a href="projects.html">Projects</a>
@@ -23,109 +20,45 @@
     </header>
 
     <main id="main">
-      <section class="about-lead" aria-labelledby="about-title">
-        <div>
-          <p class="eyebrow">01 / about me</p>
-          <h1 id="about-title">A person who keeps <span>making</span> things.</h1>
-          <p class="lead-copy">I’m Simon: a student, developer, pianist, and enthusiastic pilot of machines that do not technically need a pilot. I like ideas best when they become something you can open, use, listen to, or poke at.</p>
-        </div>
-        <aside class="lead-index" aria-label="About page index">
-          <p class="index-big">Three recurring signals. One slightly overstuffed desk.</p>
-          <p class="meta">CODE / MUSIC / SPACE<br>SIMON QIAN<br>STUDENT + BUILDER</p>
-        </aside>
-      </section>
+      <header class="page-head">
+        <h1>About</h1>
+        <p>Hi, I’m Simon, a student and developer interested in building practical software and small web projects. I work with C++, Python, Swift, and web technologies, and I enjoy competitive programming.</p>
+        <p class="page-meta">Pronouns: he/they</p>
+      </header>
 
-      <section class="about-workbench" aria-labelledby="workbench-title">
-        <div class="section-stamp">
-          <span id="workbench-title">A small working index</span>
-          <span>Use the selector / or just keep scrolling</span>
-        </div>
-        <div class="workbench-layout">
-          <div class="workbench-copy">
-            <p class="display-serif">Three things I keep returning to.</p>
-            <div class="lens-controls" role="tablist" aria-label="About lenses">
-              <button class="lens-button" type="button" role="tab" aria-selected="true" data-lens="code">
-                <span>Code &amp; systems</span><span>01</span>
-              </button>
-              <button class="lens-button" type="button" role="tab" aria-selected="false" data-lens="music">
-                <span>Music &amp; listening</span><span>02</span>
-              </button>
-              <button class="lens-button" type="button" role="tab" aria-selected="false" data-lens="space">
-                <span>Space &amp; simulation</span><span>03</span>
-              </button>
-            </div>
-            <p class="lens-hint">The selector is only a change of focus. The full story is still here, underneath the mechanism.</p>
-          </div>
+      <div class="about-grid">
+        <section class="info-block" aria-labelledby="skills-title">
+          <h2 class="section-title" id="skills-title">Skills</h2>
+          <ul class="info-list">
+            <li>C++</li>
+            <li>Python</li>
+            <li>Swift</li>
+            <li>Web development</li>
+            <li>Competitive programming</li>
+          </ul>
+        </section>
+        <section class="info-block" aria-labelledby="interests-title">
+          <h2 class="section-title" id="interests-title">Interests</h2>
+          <ul class="info-list">
+            <li>Piano</li>
+            <li>Music</li>
+            <li>Simulation games</li>
+            <li>Design</li>
+            <li>Books</li>
+          </ul>
+        </section>
+      </div>
 
-          <div class="specimen-stage">
-            <article class="lens-panel specimen-panel-code" data-lens-panel="code" role="tabpanel" aria-label="Code and systems">
-              <div class="specimen-topline"><span>01 / systems</span><span>still debugging</span></div>
-              <div class="specimen-mark">C++<br>SWIFT</div>
-              <h3>Make the<br>machine answer.</h3>
-              <p>Competitive programming, C++, Luogu, USACO, macOS tools, and the web projects that happen when one small question refuses to stay small.</p>
-              <div class="specimen-detail">curiosity → prototype → test → repeat<br>Cloudflare Pages / Workers · LMSwitch</div>
-            </article>
-
-            <article class="lens-panel specimen-panel-music" data-lens-panel="music" role="tabpanel" aria-label="Music and listening">
-              <div class="specimen-topline"><span>02 / listening</span><span>side b</span></div>
-              <div class="specimen-mark">♪<br>+ × ÷ = −</div>
-              <h3>Leave room<br>for a chorus.</h3>
-              <p>Classically trained piano, ABRSM Grade 8, a Roland RD-88EX, and a turntable that makes choosing a record feel like part of the music.</p>
-              <div class="specimen-detail">Ed Sheeran on vinyl<br>AT-LPW50BT · arrangements · repeat</div>
-            </article>
-
-            <article class="lens-panel specimen-panel-space" data-lens-panel="space" role="tabpanel" aria-label="Space and simulation">
-              <div class="specimen-topline"><span>03 / simulation</span><span>frame shift</span></div>
-              <div class="specimen-mark">CMDR<br>SIMONLM</div>
-              <h3>Go somewhere<br>strange.</h3>
-              <p>Elite Dangerous, Derail Valley, Minecraft redstone routes, and any game where a control panel is an invitation rather than a warning.</p>
-              <div class="specimen-detail">flight log: somewhere in the black<br>hardware controls / long routes / no fast travel</div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="about-story" aria-labelledby="story-title">
-        <blockquote id="story-title">“I like building things because it turns curiosity into something you can actually poke at.”</blockquote>
-        <div class="story-copy">
-          <p>I got into programming by wondering whether I could make a computer do one small thing, then another, then another. That turned into tools, websites, experiments, and the occasional piece of hardware with more wires than dignity.</p>
-          <p>The part I still enjoy most is the in-between bit: when something only exists in your head, and you keep nudging it until it starts to work. It doesn’t need to be enormous to be worth making.</p>
-        </div>
-      </section>
-
-      <section class="fact-strip" aria-label="A few more details">
-        <article class="fact">
-          <span class="meta">on the web</span>
-          <h2>Small sites, real edges.</h2>
-          <p>Cloudflare Pages and Workers are frequent companions. So are too many open tabs.</p>
-        </article>
-        <article class="fact">
-          <span class="meta">at the desk</span>
-          <h2>Hardware helps ideas stick.</h2>
-          <p>Piano keys, a turntable, and controls that make an interface feel physical again.</p>
-        </article>
-        <article class="fact">
-          <span class="meta">in the margins</span>
-          <h2>Design and books.</h2>
-          <p>Spare industrial forms, Into the Wild, Calvino, Hemingway, and whatever makes a system feel human.</p>
-        </article>
-      </section>
-
-      <section class="about-close" aria-label="Continue exploring">
-        <p>That’s me, more or less.</p>
-        <div class="link-cluster">
-          <a href="https://github.com/masalaempire" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a href="mailto:simonlm@simonlm.one">Email ↗</a>
-          <a href="projects.html">See the work →</a>
-        </div>
-      </section>
+      <div class="page-links" aria-label="More about Simon">
+        <a class="text-link" href="https://github.com/masalaempire" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="text-link" href="mailto:simonlm@simonlm.one">Email ↗</a>
+      </div>
     </main>
 
     <footer class="site-footer">
       <span>© 2026 SimonLM</span>
-      <span>Made with intent / and a little chaos.</span>
+      <span>Made with care.</span>
     </footer>
   </div>
-  <script src="inner.js" defer></script>
 </body>
 </html>
