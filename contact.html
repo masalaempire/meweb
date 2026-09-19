@@ -1,20 +1,135 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — SimonLM</title><meta name="description" content="Find SimonLM around the internet.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
-</head><body><div class="shell">
-<nav><a class="brand" href="index.html"><span class="brand-mark">S</span>SIMONLM</a><div class="nav-links"><a href="about.html">About me</a><a href="projects.html">Projects</a><a class="active" href="contact.html">Contact</a></div></nav>
-<main><header class="page-head"><div class="eyebrow">Find me online</div><h1>Let’s cross paths.</h1><p>These are the best places to find me.<br>Also, feel free to use whatever pronouns you prefer, though he/they is a great default if you're unsure!</p></header>
-<section class="contact-list">
-<a class="contact-item" href="https://github.com/masalaempire" target="_blank" rel="noreferrer"><span class="contact-name">GitHub</span><span class="contact-handle">@masalaempire</span><span class="arrow">↗</span></a>
-<a class="contact-item" href="https://www.youtube.com/@SimonLMLD" target="_blank" rel="noreferrer"><span class="contact-name">YouTube</span><span class="contact-handle">@SimonLMLD</span><span class="arrow">↗</span></a>
-<a class="contact-item" href="https://www.instagram.com/simonlm0608" target="_blank" rel="noreferrer"><span class="contact-name">Instagram</span><span class="contact-handle">@simonlm0608</span><span class="arrow">↗</span></a>
-<a class="contact-item" href="https://x.com/laomengsi" target="_blank" rel="noreferrer"><span class="contact-name">X / Twitter</span><span class="contact-handle">@laomengsi</span><span class="arrow">↗</span></a>
-<a class="contact-item" href="https://www.reddit.com/user/SimonLMLD/" target="_blank" rel="noreferrer"><span class="contact-name">Reddit</span><span class="contact-handle">u/SimonLMLD</span><span class="arrow">↗</span></a>
-<a class="contact-item" href="https://simonlm.space" target="_blank" rel="noreferrer"><span class="contact-name">Inara</span><span class="contact-handle">CMDR SimonLM</span><span class="arrow">↗</span></a>
-<a class="contact-item" href="mailto:simonlm@simonlm.one" target="_blank" rel="noreferrer"><span class="contact-name">Email</span><span class="contact-handle">simonlm@simonlm.one</span><span class="arrow">↗</span></a>
-</section>
-<section class="note"><div><div class="eyebrow" style="color:#c7ff48">A small invitation</div><h2 style="margin:8px 0 0;font-size:2rem">Have an interesting idea?</h2><p>I’m always keen to meet people who care deeply about making things — technical or otherwise.</p></div><a class="button acid" href="https://github.com/masalaempire" target="_blank" rel="noreferrer">Start on GitHub ↗</a></section>
-</main><footer class="site-footer"><span>© 2026 SimonLM</span><span>Made with intent &amp; a little chaos.</span></footer></div></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — SimonLM</title>
+  <meta name="description" content="Find SimonLM around the internet or send an email.">
+  <link rel="stylesheet" href="inner.css">
+</head>
+<body class="inner-page page-contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="SimonLM home">
+        <span class="brand-mark">S</span>
+        <span>SIMONLM / FIELD NOTES</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="contact-lead" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">03 / contact</p>
+          <h1 id="contact-title">Let’s cross <span>paths.</span></h1>
+          <p class="lead-copy">The internet is large, but these are the places where I actually tend to be. Email is usually the fastest route; the rest are different windows into the same person.</p>
+        </div>
+        <aside class="lead-index" aria-label="Contact page index">
+          <p class="index-big">No funnel. No form. Just a few open channels.</p>
+          <p class="meta">SIMON QIAN<br>HE / THEY<br>REPLY WHEN HUMANLY POSSIBLE</p>
+        </aside>
+      </section>
+
+      <section class="contact-stage" aria-labelledby="channels-title">
+        <div class="contact-display">
+          <div>
+            <span class="output-label" id="channels-title">Current channel</span>
+            <output class="channel-output" data-channel-output aria-live="polite">
+              <strong>Email</strong>
+              <small>simonlm@simonlm.one</small>
+            </output>
+          </div>
+          <div>
+            <button class="copy-email" type="button" data-copy-email="simonlm@simonlm.one">Copy email address</button>
+            <p class="copy-status" data-copy-status aria-live="polite">Or open the address directly below.</p>
+          </div>
+        </div>
+
+        <nav aria-label="Contact channels">
+          <ul class="channel-list">
+            <li>
+              <a class="channel-link is-current" href="mailto:simonlm@simonlm.one" data-channel
+                 data-channel-name="Email" data-channel-handle="simonlm@simonlm.one">
+                <span class="channel-name">Email</span>
+                <span class="channel-handle">simonlm@simonlm.one</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-link" href="https://github.com/masalaempire" target="_blank" rel="noreferrer" data-channel
+                 data-channel-name="GitHub" data-channel-handle="@masalaempire">
+                <span class="channel-name">GitHub</span>
+                <span class="channel-handle">@masalaempire</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-link" href="https://www.youtube.com/@SimonLMLD" target="_blank" rel="noreferrer" data-channel
+                 data-channel-name="YouTube" data-channel-handle="@SimonLMLD">
+                <span class="channel-name">YouTube</span>
+                <span class="channel-handle">@SimonLMLD</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-link" href="https://www.instagram.com/simonlm0608" target="_blank" rel="noreferrer" data-channel
+                 data-channel-name="Instagram" data-channel-handle="@simonlm0608">
+                <span class="channel-name">Instagram</span>
+                <span class="channel-handle">@simonlm0608</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-link" href="https://x.com/laomengsi" target="_blank" rel="noreferrer" data-channel
+                 data-channel-name="X / Twitter" data-channel-handle="@laomengsi">
+                <span class="channel-name">X / Twitter</span>
+                <span class="channel-handle">@laomengsi</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-link" href="https://www.reddit.com/user/SimonLMLD/" target="_blank" rel="noreferrer" data-channel
+                 data-channel-name="Reddit" data-channel-handle="u/SimonLMLD">
+                <span class="channel-name">Reddit</span>
+                <span class="channel-handle">u/SimonLMLD</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel-link" href="https://simonlm.space" target="_blank" rel="noreferrer" data-channel
+                 data-channel-name="Inara" data-channel-handle="CMDR SimonLM">
+                <span class="channel-name">Inara</span>
+                <span class="channel-handle">CMDR SimonLM</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="contact-note" aria-label="Invitation">
+        <div>
+          <span class="section-stamp">A small invitation</span>
+          <h2>Have an interesting idea? Bring the strange version.</h2>
+          <p>I’m always keen to meet people who care deeply about making things — technical or otherwise. He/they is a great default if you’re unsure.</p>
+        </div>
+        <div class="contact-links">
+          <a class="page-link" href="projects.html">See what I make →</a>
+          <a class="page-link" href="about.html">Read the field notes →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 SimonLM</span>
+      <span>Made with intent / and a little chaos.</span>
+    </footer>
+  </div>
+  <script src="inner.js" defer></script>
+</body>
+</html>
