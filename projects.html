@@ -1,18 +1,127 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects — SimonLM</title><meta name="description" content="Selected projects by Simon Qian.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
-</head><body><div class="shell">
-<nav><a class="brand" href="index.html"><span class="brand-mark">S</span>SIMONLM</a><div class="nav-links"><a href="about.html">About me</a><a class="active" href="projects.html">Projects</a><a href="contact.html">Contact</a></div></nav>
-<main><header class="page-head"><div class="eyebrow">Selected works</div><h1>A shelf for the things I’ve built.</h1><p>Small experiments, useful tools, and projects that came from following an interesting idea a little further.</p></header>
-<section class="project-grid">
-<a class="project" href="https://masalaempire.top/" target="_blank" rel="noreferrer"><div class="project-art empire">MASALA / EMPIRE</div><div><h3>Masala Empire</h3><p>A home on the web for the community I helped build — and its first president.</p></div><footer><span>Visit site</span><span>↗</span></footer></a>
-<a class="project" href="https://campfireguitar.pages.dev/" target="_blank" rel="noreferrer"><div class="project-art guitar">CAMPFIRE / GUITAR</div><div><h3>Campfire Guitar</h3><p>A creative web project with music at its centre.</p></div><footer><span>Visit site</span><span>↗</span></footer></a>
-<a class="project" href="https://somnasculpt.cc/" target="_blank" rel="noreferrer"><div class="project-art somna">SOMNA / SCULPT</div><div><h3>Somnasculpt</h3><p>An imaginative digital experience with a sculptural streak.</p></div><footer><span>Visit site</span><span>↗</span></footer></a>
-<a class="project" href="https://github.com/masalaempire/tuxungeograbber/releases/download/a/tuxungeograbber2.0.xpi" target="_blank" rel="noreferrer"><div class="project-art tuxun">TUXUN / GEO</div><div><h3>TuxunGeoGrabber</h3><p>A browser extension for practical geolocation work.</p></div><footer><span>Get release</span><span>↗</span></footer></a>
-<a class="project" href="https://howlong.simonlm.one/" target="_blank" rel="noreferrer"><div class="project-art howlong">HOW / LONG</div><div><h3>HowLong</h3><p>A small web game for answering one very reasonable question: how long?</p></div><footer><span>Try it out</span><span>↗</span></footer></a>
-</section>
-<section class="note"><div><div class="eyebrow" style="color:#c7ff48">More in the lab</div><h2 style="margin:8px 0 0;font-size:2rem">There’s always another tab open.</h2><p>Find ongoing experiments and code on GitHub — it’s the most current record of what I’m making.</p></div><a class="button acid" href="https://github.com/masalaempire" target="_blank" rel="noreferrer">GitHub profile ↗</a></section>
-</main><footer class="site-footer"><span>© 2026 SimonLM</span><span>Made with intent &amp; a little chaos.</span></footer></div></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — SimonLM</title>
+  <meta name="description" content="Selected projects, experiments, and useful things by SimonLM.">
+  <link rel="stylesheet" href="inner.css">
+</head>
+<body class="inner-page page-projects">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="SimonLM home">
+        <span class="brand-mark">S</span>
+        <span>SIMONLM / FIELD NOTES</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="projects-lead" aria-labelledby="projects-title">
+        <div>
+          <p class="eyebrow">02 / projects</p>
+          <h1 id="projects-title">Things I <span>made</span> instead of wondering.</h1>
+          <p class="lead-copy">A small catalogue of community spaces, music experiments, browser tools, and games. Not everything is polished. Everything here started with a reason.</p>
+        </div>
+        <aside class="lead-index" aria-label="Projects page index">
+          <p class="index-big">Open the work. Follow the thread. See what happens.</p>
+          <p class="meta">05 ENTRIES<br>LIVE + EXPERIMENTAL<br>UPDATED WHEN I REMEMBER</p>
+        </aside>
+      </section>
+
+      <section class="projects-catalog" aria-labelledby="catalog-title">
+        <header class="catalog-header">
+          <div>
+            <span class="section-stamp">A working catalogue</span>
+            <h2 id="catalog-title">Each one is a slightly different answer.</h2>
+          </div>
+          <p>Hover or focus an entry to tune the preview. The links open the actual project, not a screenshot pretending to be one.</p>
+        </header>
+
+        <div class="project-console">
+          <aside class="project-preview preview-masala" data-active="masala" aria-live="polite">
+            <div class="preview-meta"><span>selected / 01</span><span>open work</span></div>
+            <div class="preview-art"><span>MASALA / EMPIRE</span></div>
+            <h3 class="preview-title">Masala Empire</h3>
+            <p class="preview-description">A home on the web for the community I helped build — and its first president.</p>
+          </aside>
+
+          <ol class="project-list" aria-label="Selected projects">
+            <li>
+              <a class="project-row is-current" href="https://masalaempire.top/" target="_blank" rel="noreferrer"
+                 data-project="masala" data-art="MASALA / EMPIRE"
+                 data-title="Masala Empire"
+                 data-description="A home on the web for the community I helped build — and its first president.">
+                <span class="row-index">01</span>
+                <span><h3>Masala Empire</h3><p>A community home built around the people who make it worth visiting.</p></span>
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="project-row" href="https://campfireguitar.pages.dev/" target="_blank" rel="noreferrer"
+                 data-project="guitar" data-art="CAMPFIRE / GUITAR"
+                 data-title="Campfire Guitar"
+                 data-description="A creative web project with music at its centre.">
+                <span class="row-index">02</span>
+                <span><h3>Campfire Guitar</h3><p>A creative web project with music at its centre.</p></span>
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="project-row" href="https://somnasculpt.cc/" target="_blank" rel="noreferrer"
+                 data-project="somna" data-art="SOMNA / SCULPT"
+                 data-title="Somnasculpt"
+                 data-description="An imaginative digital experience with a sculptural streak.">
+                <span class="row-index">03</span>
+                <span><h3>Somnasculpt</h3><p>An imaginative digital experience with a sculptural streak.</p></span>
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="project-row" href="https://github.com/masalaempire/tuxungeograbber/releases/download/a/tuxungeograbber2.0.xpi" target="_blank" rel="noreferrer"
+                 data-project="tuxun" data-art="TUXUN / GEO"
+                 data-title="TuxunGeoGrabber"
+                 data-description="A browser extension for practical geolocation work.">
+                <span class="row-index">04</span>
+                <span><h3>TuxunGeoGrabber</h3><p>A browser extension for practical geolocation work.</p></span>
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="project-row" href="https://howlong.simonlm.one/" target="_blank" rel="noreferrer"
+                 data-project="howlong" data-art="HOW / LONG"
+                 data-title="HowLong"
+                 data-description="A small web game for answering one very reasonable question: how long?">
+                <span class="row-index">05</span>
+                <span><h3>HowLong</h3><p>A small web game for answering one very reasonable question: how long?</p></span>
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+
+        <div class="catalog-note">
+          <div>
+            <span class="section-stamp">More in the lab</span>
+            <h2>There is always another tab open.</h2>
+            <p>GitHub is the most current record of what I’m making, breaking, and trying to understand.</p>
+          </div>
+          <a class="page-link" href="https://github.com/masalaempire" target="_blank" rel="noreferrer">Open GitHub ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 SimonLM</span>
+      <span>Made with intent / and a little chaos.</span>
+    </footer>
+  </div>
+  <script src="inner.js" defer></script>
+</body>
+</html>
