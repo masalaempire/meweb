@@ -52,6 +52,7 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .project-art::after { content: ""; position: absolute; width: 130px; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50%; right: -33px; bottom: -60px; opacity: .6; }
 .guitar { background: #ffe4ae; color: #6a4618; }.empire { background: #17161f; color: #c7ff48; }.somna { background: #dcd2ff; color: #4725ac; }.tuxun { background: #c9f0eb; color: #135e58; }
 .project-art.elite { background: #ff9d3d; color: #5a2a0a; }
+.project-art.ontimely { background: #cce4ff; color: #1d4f91; }
 .project h3 { margin: 18px 0 5px; letter-spacing: -.04em; font-size: 1.35rem; }.project p { color: var(--muted); font-size: .9rem; margin: 0; }
 .project footer { margin-top: 20px; display: flex; justify-content: space-between; align-items: center; font: .68rem "Space Mono", monospace; text-transform: uppercase; color: var(--muted); }
 .interest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 17px; }
