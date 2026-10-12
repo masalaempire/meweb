@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "howlong",
+    "name": "HowLong",
+    "category": "Browser game",
+    "status": "published",
+    "featured": true,
+    "url": "https://howlong.simonlm.one/",
+    "action": "Play the game",
+    "description": "A guessing game about time. Estimate how long real things take, from milliseconds to years.",
+    "image": "assets/howlong.jpg",
+    "alt": "HowLong practice mode with a question about the length of Hamilton and six controls for estimating a duration.",
+    "width": 816,
+    "height": 972,
+    "caption": "The practice interface. A question, a duration, and your best guess.",
+    "details": [
+      {"title": "The game", "text": "How long does an email take to arrive? The game asks questions about real events and lets you answer with a duration. Your guess is scored by its ratio to the answer, so very short and very long times can use the same rules."},
+      {"title": "The interface", "text": "Years, days, hours, minutes, seconds, and milliseconds each have their own controls. Practice lets you choose a category; the daily challenge brings five questions together on a shared board."}
+    ]
+  },
+  {
+    "slug": "minedhelper",
+    "name": "MinEDHelper",
+    "category": "Web tool",
+    "status": "published",
+    "featured": true,
+    "url": "https://elite.simonlm.one/",
+    "source": "https://github.com/masalaempire/WebEDHelper",
+    "action": "Explore the directory",
+    "description": "A directory of Elite Dangerous community tools. Find a resource by activity and keep useful links close.",
+    "image": "assets/minedhelper.jpg",
+    "alt": "MinEDHelper directory with activity categories, resource search, and community tool entries.",
+    "width": 780,
+    "height": 760,
+    "caption": "The resource directory, organized around what you want to do in the game.",
+    "details": [
+      {"title": "Finding the right tool", "text": "Elite Dangerous has a lot of community resources. MinEDHelper brings them into a searchable directory, with categories for exploration, ship building, trading, and other activities. A separate Tools page offers shortcuts organized by task."},
+      {"title": "Keeping it useful", "text": "Favorite resources and personal bookmarks live on the Saved page. They stay in the browser, with tags and categories to help organize them. The interface also supports light, dark, and system themes."}
+    ]
+  },
+  {
+    "slug": "ontimely",
+    "name": "OnTimely",
+    "category": "macOS app",
+    "status": "published",
+    "featured": true,
+    "url": "https://ontimely.simonlm.one/",
+    "source": "https://github.com/masalaempire/OnTimely",
+    "action": "Visit the app site",
+    "description": "A Mac app for planning tasks and remembering when to start, finish, and submit them.",
+    "image": "assets/ontimely.webp",
+    "alt": "OnTimely native Mac window showing an Inbox of tasks with a Plan action beside each one.",
+    "width": 1500,
+    "height": 983,
+    "caption": "Inbox keeps tasks quiet until you are ready to plan them.",
+    "secondImage": "assets/ontimely-plan.webp",
+    "secondAlt": "OnTimely plan review showing a deadline, estimated work, suggested start, latest safe start, and reminder activation.",
+    "secondCaption": "A plan connects the deadline to a time to begin.",
+    "details": [
+      {"title": "From a task to a plan", "text": "Add a task to Inbox, give it a deadline, and estimate the work. OnTimely turns that into a plan with a suggested start and a latest safe start. Repeated macOS notifications bring the task back to your attention."},
+      {"title": "Alongside the reminders", "text": "Calendar shows planned tasks by month or day. Notes keeps ideas, links, and lists beside them, and a calendar subscription can bring in school assignments. Tasks are stored on the Mac; no account is needed."}
+    ]
+  },
+  {
+    "slug": "masala-empire",
+    "name": "Masala Empire",
+    "category": "Community website",
+    "status": "published",
+    "featured": false,
+    "url": "https://masalaempire.top/",
+    "action": "Visit the site",
+    "description": "The website for a community I helped build and served as its first president."
+  },
+  {
+    "slug": "campfire-guitar",
+    "name": "Campfire Guitar",
+    "category": "Music / web",
+    "status": "published",
+    "featured": false,
+    "url": "https://campfireguitar.pages.dev/",
+    "action": "Visit the site",
+    "description": "A web project centered on music."
+  },
+  {
+    "slug": "somnasculpt",
+    "name": "Somnasculpt",
+    "category": "Digital experiment",
+    "status": "published",
+    "featured": false,
+    "url": "https://somnasculpt.cc/",
+    "action": "Visit the site",
+    "description": "An experimental digital experience."
+  },
+  {
+    "slug": "tuxungeograbber",
+    "name": "TuxunGeoGrabber",
+    "category": "Browser extension",
+    "status": "published",
+    "featured": false,
+    "url": "https://github.com/masalaempire/tuxungeograbber/releases/download/a/tuxungeograbber2.0.xpi",
+    "action": "Get the release",
+    "description": "A browser extension for geolocation work."
+  }
+]
