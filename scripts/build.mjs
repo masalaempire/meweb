@@ -106,7 +106,7 @@ const projectIndex = layout({
   title: 'Projects — Simon Qian',
   description: 'Apps, websites, games, and experiments by Simon Qian. Explore HowLong, MinEDHelper, OnTimely, and more.',
   content: `    <header class="intro">
-      <h1>Selected<br><em>work.</em></h1>
+      <h1>Projects</h1>
       <div class="intro-copy"><span class="label">Projects / ${count(featured.length + other.length)}</span><p>Apps, websites, games, and a few experiments.</p></div>
     </header>
     <section aria-labelledby="selected-title">
@@ -121,8 +121,7 @@ ${featured.map(featuredProject).join('\n')}
 ${other.map((project, index) => projectRow(project, featured.length + index)).join('\n')}
       </div>
     </section>
-${ongoingSection()}
-    <a class="back-link index-back" href="index.html">← Back to Simon</a>`
+${ongoingSection()}`
 });
 
 const about = layout({
@@ -131,7 +130,7 @@ const about = layout({
   content: `    <header class="page-intro"><h1>Hi, I’m Simon.</h1></header>
     <div class="bio"><p>I’m a student interested in computer science and design. I build small apps, websites, and games, and do competitive programming in C++ on Luogu and USACO.</p><p>Outside of code, I play piano, listen to Ed Sheeran on vinyl, and spend time in Elite Dangerous, Derail Valley, and Minecraft.</p></div>
     <p class="pronouns">Simon Qian online as SimonLM. He/they is a good default.</p>
-    <a class="back-link" href="projects.html">Explore my projects →</a>`
+    <a class="about-project-link" href="projects.html">Explore my projects →</a>`
 });
 
 const contacts = [
@@ -147,16 +146,14 @@ const contact = layout({
   title: 'Contact — Simon Qian', active: 'contact', mainClass: 'small-main',
   description: 'Email and other places to find Simon Qian (SimonLM).',
   content: `    <header class="page-intro"><h1>Find me here.</h1></header>
-    <div class="contact-list">${contacts.map(([name, handle, url]) => `<a class="contact-row" href="${escape(url)}"${url.startsWith('mailto:') ? '' : ' target="_blank" rel="noopener noreferrer"'}><span>${escape(name)}</span><span>${escape(handle)} ${arrow}</span></a>`).join('\n')}</div>
-    <a class="back-link" href="projects.html">← Back to the projects</a>`
+    <div class="contact-list">${contacts.map(([name, handle, url]) => `<a class="contact-row" href="${escape(url)}"${url.startsWith('mailto:') ? '' : ' target="_blank" rel="noopener noreferrer"'}><span>${escape(name)}</span><span>${escape(handle)} ${arrow}</span></a>`).join('\n')}</div>`
 });
 
 await mkdir(resolve(root, 'projects'), {recursive: true});
 for (const [name, content] of Object.entries({'index.html':home, 'projects.html':projectIndex, 'about.html':about, 'contact.html':contact})) await writeFile(resolve(root, name), content);
 for (const [index, project] of featured.entries()) {
   const next = featured[(index + 1) % featured.length];
-  const content = `    <a class="back-link" href="../projects.html">← Selected work</a>
-    <header class="detail-intro">
+  const content = `    <header class="detail-intro">
       <div><div class="detail-meta label"><span>${escape(project.category)}</span><span>Published</span></div><h1>${escape(project.name)}</h1></div>
       <div><p>${escape(project.description)}</p><div class="project-links">${external(project.url, project.action, 'primary-link')}${project.source ? external(project.source, 'Source on GitHub') : ''}</div></div>
     </header>

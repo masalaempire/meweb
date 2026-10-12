@@ -1,6 +1,6 @@
 # Simon Qian / SimonLM
 
-A static portfolio. The landing page introduces Simon and links into the work. The Projects page leads with HowLong, MinEDHelper, and OnTimely, and keeps all seven published projects. About and Contact stay small.
+A static portfolio. The landing page introduces Simon and links into the work. The Projects page leads with OnTimely, MinEDHelper, and HowLong, and keeps all seven published projects. About and Contact stay small.
 
 ## Editing projects
 
@@ -20,8 +20,8 @@ About and Contact content, page markup, and shared navigation are in `scripts/bu
 
 ## Image sources
 
-- `assets/howlong.jpg`: the live HowLong practice interface at https://howlong.simonlm.one/, captured October 12, 2026. This is local Practice mode.
-- `assets/minedhelper.jpg`: the live resource directory at https://elite.simonlm.one/, captured October 12, 2026.
+- `assets/howlong.png`: the user's uploaded HowLong screenshot, `Screenshot 2026-10-12 at 16.55.34.png`, showing the Space Shuttle practice question. Preserved without cropping or image edits.
+- `assets/minedhelper.png`: the user's uploaded MinEDHelper screenshot, `Screenshot 2026-10-12 at 16.55.03.png`, showing the Tools page. Preserved without cropping or image edits.
 - `assets/ontimely.webp` and `assets/ontimely-plan.webp`: optimized copies of the existing app screenshots at https://ontimely.simonlm.one/assets/screenshots/inbox.png and https://ontimely.simonlm.one/assets/screenshots/review-plan.png.
 
 Product descriptions are based on the existing portfolio, the live interfaces, and the OnTimely and WebEDHelper repository READMEs. The pages make no claims about user counts, awards, or a development process.
