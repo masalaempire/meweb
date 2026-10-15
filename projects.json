@@ -1,0 +1,99 @@
+[
+  {
+    "slug": "ontimely",
+    "name": "OnTimely",
+    "category": "macOS app",
+    "status": "published",
+    "featured": true,
+    "url": "https://ontimely.simonlm.one/",
+    "source": "https://github.com/masalaempire/OnTimely",
+    "description": "A reminder app that helps you start tasks before their deadlines.",
+    "image": "assets/ontimely.webp",
+    "width": 1500,
+    "height": 983,
+    "alt": "OnTimely’s Inbox, with tasks and a Plan action beside each one.",
+    "caption": "Tasks start in a quiet Inbox. Reminders begin when you activate a plan.",
+    "intro": "A deadline tells you when to finish. OnTimely also gives you a time to start.",
+    "paragraphs": [
+      "Add a task, choose its deadline, and estimate how long it will take. Review the plan and turn on reminders when you’re ready. The app keeps track of work that’s active, finished, or still waiting in Inbox.",
+      "The interface follows that sequence: Inbox → Active → Done. Planning and reminder activation are separate steps, so collecting a task doesn’t immediately turn it into an interruption."
+    ],
+    "secondImage": "assets/ontimely-plan.webp",
+    "secondAlt": "OnTimely’s plan review showing the deadline, estimated work, suggested start, and reminder activation.",
+    "secondCaption": "Review the start time and deadline before activating reminders.",
+    "action": "Visit OnTimely"
+  },
+  {
+    "slug": "minedhelper",
+    "name": "MinEDHelper",
+    "category": "Web tool",
+    "status": "published",
+    "featured": true,
+    "url": "https://elite.simonlm.one/",
+    "source": "https://github.com/masalaempire/WebEDHelper",
+    "description": "A place to find the community tools you need in Elite Dangerous.",
+    "image": "assets/minedhelper.png",
+    "width": 2844,
+    "height": 1602,
+    "alt": "MinEDHelper’s Tools page with shortcuts grouped by activities in Elite Dangerous.",
+    "caption": "Tools are organized around what you want to do in the game.",
+    "intro": "Elite Dangerous has a lot of community tools. Finding the right one can be a task of its own.",
+    "paragraphs": [
+      "MinEDHelper brings those resources into one searchable directory. You can browse by activity, open common tools, and save useful links.",
+      "The Tools page starts with a question: what are we doing today? Route planning, exploration, ship building, and trading each lead to relevant shortcuts. Favorites and personal bookmarks are stored in the browser."
+    ],
+    "action": "Open MinEDHelper"
+  },
+  {
+    "slug": "howlong",
+    "name": "HowLong",
+    "category": "Browser game",
+    "status": "published",
+    "featured": true,
+    "url": "https://howlong.simonlm.one/",
+    "description": "A guessing game about how long things take.",
+    "image": "assets/howlong.png",
+    "width": 2682,
+    "height": 1828,
+    "alt": "HowLong asking how long a Space Shuttle launch took to reach orbit, with controls for a duration estimate.",
+    "caption": "A question, six time units, and your estimate.",
+    "intro": "How long did a Space Shuttle launch typically take to reach orbit?",
+    "paragraphs": [
+      "HowLong is a duration-estimation game. Read a question, set a duration, and submit your best guess.",
+      "The answer is entered in time units, from years down to milliseconds. The interface makes very different scales of time part of the same interaction."
+    ],
+    "action": "Play HowLong"
+  },
+  {
+    "slug": "masala-empire",
+    "name": "Masala Empire",
+    "category": "Community website",
+    "status": "published",
+    "url": "https://masalaempire.top/",
+    "description": "The website for a community I helped build and served as its first president."
+  },
+  {
+    "slug": "campfire-guitar",
+    "name": "Campfire Guitar",
+    "category": "Music / web",
+    "status": "published",
+    "url": "https://campfireguitar.pages.dev/",
+    "description": "A web project centered on music."
+  },
+  {
+    "slug": "somnasculpt",
+    "name": "Somnasculpt",
+    "category": "Digital experiment",
+    "status": "published",
+    "url": "https://somnasculpt.cc/",
+    "description": "An experimental digital experience."
+  },
+  {
+    "slug": "tuxungeograbber",
+    "name": "TuxunGeoGrabber",
+    "category": "Browser extension",
+    "status": "published",
+    "url": "https://github.com/masalaempire/tuxungeograbber/releases/download/a/tuxungeograbber2.0.xpi",
+    "description": "A browser extension for geolocation work."
+  }
+]
