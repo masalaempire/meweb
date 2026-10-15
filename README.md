@@ -1,24 +1,34 @@
-# Simon’s portfolio
+# SimonLM
 
-A static portfolio. The homepage is the project gallery; the index lists all work. About and Contact are deliberately short. Featured projects have their own pages.
+A desktop room with a working HTML archive inside its monitor. Move the pointer to look around, click the monitor or **Use computer**, and browse with the mouse or keyboard. **Return to room** and Escape leave the computer. The **Reduce motion** control disables head movement and camera travel; it follows the system preference initially and when that preference changes.
 
-## Hosting
+The source app is Vite, TypeScript, and Three.js. The monitor contains ordinary HTML rendered at a fixed logical size through CSS3D; browsing and scrolling happen inside that screen. Narrow or touch-only displays receive a desktop notice with a link to the existing project index. If WebGL cannot initialize, the archive opens directly.
 
-Serve the repository root. No installation, build step, external fonts, or browser JavaScript is required. Existing `index.html`, `projects.html`, `about.html`, and `contact.html` URLs remain available.
+## Work locally
 
-## Editing projects
+Use the tested Node.js 24.19.0 runtime pinned in `.node-version`, with npm. The application supports Node.js 22.22.2 or later, or Node.js 24.15.0 or later.
 
-Project content lives in `projects.json`. The order in that file controls the gallery and index.
+```sh
+npm ci
+npm run dev
+npm run build
+npm run preview
+```
 
-1. Add or edit an entry with a unique lowercase `slug`, `name`, `category`, `description`, `status`, and `url`.
-2. Use `"status": "in-progress"` for upcoming work. A non-featured entry can omit its URL until it has something to visit; it renders as text rather than a dead link.
-3. To feature a project, add `"featured": true`, an image in `assets/`, descriptive `alt` text, its natural `width` and `height`, and project-page content (`intro`, `paragraphs`, `caption`, `action`). Optional fields: `source`, `secondImage`, `secondAlt`, `secondCaption`.
-4. Run `node scripts/build.mjs` with Node.js 18 or later and commit the generated HTML along with the content changes.
+Dependencies are pinned in `package-lock.json`. `dev` prepares ignored copies of legacy images in `public/`. `build` prepares the same assets, checks TypeScript, builds `dist/`, copies unchanged legacy pages and media, and synchronizes the generated homepage and `archive-assets/` back to the repository root. The root and `dist/` are both deployable. Commit the generated root files with source changes.
 
-The generator resolves paths relative to itself, so it works from any directory. It uses only Node built-ins. To remove a featured project completely, also delete its old HTML file under `projects/`; regeneration does not delete files.
+## Hosting and legacy URLs
 
-## Design and images
+Keep the existing Cloudflare Pages configuration serving the repository root. No production build-setting change is required. The committed `index.html` is generated; edit `app/index.html` or `app/src/` instead. No alternate hosting service is used.
 
-Layout and responsive rules are in `styles.css`. The first three projects have individually arranged image sizes; additional featured projects use a full-width layout by default.
+Existing `projects.html`, `about.html`, `contact.html`, `projects/*.html`, `styles.css`, and `assets/` remain intact. `projects.json` remains the factual project source. The former static homepage generator has been replaced by the application build entry point at `scripts/build.mjs`; running it cannot regenerate the old homepage.
 
-The project screenshots are existing repository assets, copied without modifying their image content. Images retain their original proportions. The site uses system sans-serif fonts, visible keyboard focus, a skip link, semantic landmarks, and reduced-motion support.
+## Source boundaries
+
+- `app/src/main.ts` handles mode changes, keyboard focus, preferences, and startup fallback.
+- `app/src/scene/` owns the room, physical monitor, CSS3D mounting, and camera.
+- `app/src/archive/` owns archive navigation, entry reading, media, and internal scrolling.
+- `app/src/content/` turns factual source material into archive entries.
+- `app/src/types.ts` defines their shared contracts.
+
+`npm run check` compares legacy file bytes with the approved main snapshot using Git blob hashes and checks generated root/dist parity. It requires an existing build. This structural check does not replace browser review of camera transitions, text clarity, keyboard operation, or scroll behavior. See `docs/review.md`.

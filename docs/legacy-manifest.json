@@ -1,0 +1,58 @@
+[
+  {
+    "path": "about.html",
+    "sha": "c04a3987052f29f2f7c66fc5a612a420295763af"
+  },
+  {
+    "path": "assets/howlong.png",
+    "sha": "99c2160b7e79da2dbe797ef04678d9ae9c63290a"
+  },
+  {
+    "path": "assets/minedhelper.png",
+    "sha": "85d92b651752286cccfc20e48fcd50f4d3fed8f1"
+  },
+  {
+    "path": "assets/ontimely-plan.webp",
+    "sha": "477083ac7879784f7717e195b807f8cb620860e3"
+  },
+  {
+    "path": "assets/ontimely.webp",
+    "sha": "31a2d9d846c52d06d0d3c2f0f965c9ee8e1e6ee8"
+  },
+  {
+    "path": "contact.html",
+    "sha": "e54377e8133c0c1a43f3fc4095e215303f5f917e"
+  },
+  {
+    "path": "favicon.ico",
+    "sha": "ffeb4091e113872e50f6d920849f501771e42bee"
+  },
+  {
+    "path": "mewebkg.png",
+    "sha": "9f41fb12837b1ae43b948821d346c43ab8c2f4a2"
+  },
+  {
+    "path": "projects.html",
+    "sha": "3ba75b19907dc025c0bf6e23aeef3feb1270e62e"
+  },
+  {
+    "path": "projects.json",
+    "sha": "155bece00fbcc843d42606d6295636090aca144f"
+  },
+  {
+    "path": "projects/howlong.html",
+    "sha": "3d06e8d129631947074cb7be233d3b914b9b5f85"
+  },
+  {
+    "path": "projects/minedhelper.html",
+    "sha": "6adae63151b403b12c3790550b60f7f2275587af"
+  },
+  {
+    "path": "projects/ontimely.html",
+    "sha": "12b8a68b878a1062d950f2b605a95d88e8fb5fd6"
+  },
+  {
+    "path": "styles.css",
+    "sha": "1a293c146f00db56499931fd63ec2bbe7533adb1"
+  }
+]

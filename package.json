@@ -1,0 +1,16 @@
+{
+  "name": "simonlm-desktop-archive",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=22.22.2" },
+  "scripts": {
+    "dev": "node scripts/prepare-public.mjs && vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "node scripts/check-site.mjs"
+  },
+  "dependencies": { "three": "0.186.1" },
+  "devDependencies": { "@types/three": "0.186.0", "typescript": "5.9.3", "vite": "8.3.4" }
+}
