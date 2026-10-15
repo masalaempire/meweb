@@ -12,7 +12,7 @@ function render(projects) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${e(title)} — Simon Qian</title>
+<title>${e(title)} — Simon</title>
 <meta name="description" content="${e(description)}">
 <meta name="theme-color" content="#fafafa">
 <link rel="icon" href="${prefix}favicon.ico">
@@ -22,7 +22,7 @@ function render(projects) {
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="layout">
 <header class="sidebar">
-<a class="name" href="${prefix}index.html">Simon Qian<span>SimonLM</span></a>
+<a class="name" href="${prefix}index.html">Simon<span>SimonLM</span></a>
 <p class="sidebar-note">Student.<br>Apps, websites &amp; games.</p>
 <nav aria-label="Main navigation">
 <a href="${prefix}index.html#projects"${active==="work"?' aria-current="page"':""}>Projects</a>
@@ -32,7 +32,7 @@ function render(projects) {
 <a class="sidebar-email" href="mailto:simonlm@simonlm.one">Email ${arrow}</a>
 </header>
 <main id="main" class="${type}" tabindex="-1">${body}</main>
-<footer class="footer"><span>© 2026 Simon Qian</span><a href="https://github.com/masalaempire">GitHub ${arrow}</a><a href="mailto:simonlm@simonlm.one">Email ${arrow}</a></footer>
+<footer class="footer"><span>© 2026 Simon</span><a href="https://github.com/masalaempire">GitHub ${arrow}</a><a href="mailto:simonlm@simonlm.one">Email ${arrow}</a></footer>
 </div>
 </body>
 </html>
@@ -47,14 +47,14 @@ function render(projects) {
 <p class="project-summary">${e(p.description)}</p>${p.status==="in-progress"?'<p class="status">In progress</p>':""}
 </article>`).join("\n");
  const files={};
- files["index.html"]=shell("Home","Apps, websites, and games by Simon Qian.",`<section class="landing-intro" aria-labelledby="intro-title"><p class="intro-hello">Hello, I’m</p><h1 id="intro-title">Simon Qian.</h1><div class="intro-bottom"><a class="intro-link" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a><p>I make apps, websites, and games.<br>I’m a student interested in computer science and design.</p></div></section>
+ files["index.html"]=shell("Home","Apps, websites, and games by Simon.",`<section class="landing-intro" aria-labelledby="intro-title"><p class="intro-hello">Hello, I’m</p><h1 id="intro-title">Simon.</h1><div class="intro-bottom"><a class="intro-link" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a><p>I make apps, websites, and games.<br>I’m a student interested in computer science and design.</p></div></section>
 <header class="work-heading gallery-heading" id="projects" tabindex="-1"><div><h2>Projects</h2><p>Things I’ve been making.</p></div><a class="view-index" href="projects.html">View index <span aria-hidden="true">↗</span></a></header>
 <div class="selected-work">${work}</div>
 <section class="other-work" aria-labelledby="other-heading"><div class="section-heading"><h2 id="other-heading">Other work</h2><a href="https://github.com/masalaempire">Ongoing projects on GitHub ${arrow}</a></div><ul class="project-index">${projects.filter(p=>!p.featured).map(row).join("\n")}</ul></section>
 ${bio}`);
- files["projects.html"]=shell("Project index","All projects by Simon Qian.",`<header class="work-heading"><div><h1>Project index</h1><p>Apps, websites &amp; games.</p></div><a class="view-index" href="index.html">View gallery ↗</a></header><ul class="project-index full-index">${projects.map(row).join("\n")}</ul><p class="index-note">New work and updates on <a href="https://github.com/masalaempire">GitHub ${arrow}</a>.</p>`,{type:"index-page"});
- files["about.html"]=shell("About","A little about Simon Qian.",`<header class="simple-heading"><h1>About</h1></header><div class="short-copy"><p class="lead">I’m Simon Qian, also known as SimonLM. I’m a student interested in computer science and design.</p><p>I make apps, websites, and games. I write C++ for competitive programming and Swift for Mac apps.</p><p>Outside that, I play piano, listen to records, and play Elite Dangerous. I like spare, industrial design.</p><p class="pronouns">He / they.</p><a class="text-link" href="index.html">See my projects →</a></div>`,{active:"about",type:"secondary-page"});
- files["contact.html"]=shell("Contact","Email and social links for Simon Qian.",`<header class="simple-heading"><h1>Contact</h1></header><a class="contact-email" href="mailto:simonlm@simonlm.one">simonlm@simonlm.one ${arrow}</a><ul class="social-links">${socials.map(([name,url,handle])=>`<li><a href="${url}"><span>${name}</span><span class="handle">${handle}</span>${arrow}</a></li>`).join("\n")}</ul>`,{active:"contact",type:"secondary-page"});
+ files["projects.html"]=shell("Project index","All projects by Simon.",`<header class="work-heading"><div><h1>Project index</h1><p>Apps, websites &amp; games.</p></div><a class="view-index" href="index.html">View gallery ↗</a></header><ul class="project-index full-index">${projects.map(row).join("\n")}</ul><p class="index-note">New work and updates on <a href="https://github.com/masalaempire">GitHub ${arrow}</a>.</p>`,{type:"index-page"});
+ files["about.html"]=shell("About","A little about Simon.",`<header class="simple-heading"><h1>About</h1></header><div class="short-copy"><p class="lead">I’m Simon, also known as SimonLM. I’m a student interested in computer science and design.</p><p>I make apps, websites, and games. I write C++ for competitive programming and Swift for Mac apps.</p><p>Outside that, I play piano, listen to records, and play Elite Dangerous. I like spare, industrial design.</p><p class="pronouns">He / they.</p><a class="text-link" href="index.html">See my projects →</a></div>`,{active:"about",type:"secondary-page"});
+ files["contact.html"]=shell("Contact","Email and social links for Simon.",`<header class="simple-heading"><h1>Contact</h1></header><a class="contact-email" href="mailto:simonlm@simonlm.one">simonlm@simonlm.one ${arrow}</a><ul class="social-links">${socials.map(([name,url,handle])=>`<li><a href="${url}"><span>${name}</span><span class="handle">${handle}</span>${arrow}</a></li>`).join("\n")}</ul>`,{active:"contact",type:"secondary-page"});
  featured.forEach((p,i)=>{
  const next=featured[(i+1)%featured.length];
  files[`projects/${p.slug}.html`]=shell(p.name,p.description,`<header class="project-heading"><p>${e(p.category)}${p.status==="in-progress"?" · In progress":""}</p><h1>${e(p.name)}</h1><div class="project-introduction"><p>${e(p.description)}</p><div class="project-links">${p.url?`<a href="${e(p.url)}">${e(p.action||"Visit project")} ${arrow}</a>`:""}${p.source?`<a href="${e(p.source)}">Source ${arrow}</a>`:""}</div></div></header>

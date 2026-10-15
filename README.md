@@ -1,4 +1,4 @@
-# Simon Qian’s portfolio
+# Simon’s portfolio
 
 A static portfolio. The homepage is the project gallery; the index lists all work. About and Contact are deliberately short. Featured projects have their own pages.
 
