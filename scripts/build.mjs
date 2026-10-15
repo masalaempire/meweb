@@ -25,7 +25,7 @@ function render(projects) {
 <a class="name" href="${prefix}index.html">Simon Qian<span>SimonLM</span></a>
 <p class="sidebar-note">Student.<br>Apps, websites &amp; games.</p>
 <nav aria-label="Main navigation">
-<a href="${prefix}index.html"${active==="work"?' aria-current="page"':""}>Projects</a>
+<a href="${prefix}index.html#projects"${active==="work"?' aria-current="page"':""}>Projects</a>
 <a href="${prefix}about.html"${active==="about"?' aria-current="page"':""}>About</a>
 <a href="${prefix}contact.html"${active==="contact"?' aria-current="page"':""}>Contact</a>
 </nav>
@@ -43,11 +43,12 @@ function render(projects) {
  const bio=`<section class="small-about" aria-labelledby="about-heading"><h2 id="about-heading">A little about me</h2><div><p>I’m Simon, a student interested in computer science and design. I also play piano and spend time in space games.</p><a href="about.html">More about me →</a></div></section>`;
  const work=featured.map((p,i)=>`<article class="work work-${e(p.slug)}" id="${e(p.slug)}">
 <a class="project-image ${e(p.slug)}" href="projects/${e(p.slug)}.html" aria-label="View ${e(p.name)}">${photo(p,"",i===0)}</a>
-<div class="project-caption"><h2><a href="projects/${e(p.slug)}.html">${e(p.name)} <span aria-hidden="true">↗</span></a></h2><span>${e(p.category)}</span></div>
+<div class="project-caption"><h3><a href="projects/${e(p.slug)}.html">${e(p.name)} <span aria-hidden="true">↗</span></a></h3><span>${e(p.category)}</span></div>
 <p class="project-summary">${e(p.description)}</p>${p.status==="in-progress"?'<p class="status">In progress</p>':""}
 </article>`).join("\n");
  const files={};
- files["index.html"]=shell("Projects","Apps, websites, and games by Simon Qian.",`<header class="work-heading"><div><h1>Projects</h1><p>Things I’ve been making.</p></div><a class="view-index" href="projects.html">View index <span aria-hidden="true">↗</span></a></header>
+ files["index.html"]=shell("Home","Apps, websites, and games by Simon Qian.",`<section class="landing-intro" aria-labelledby="intro-title"><p class="intro-hello">Hello, I’m</p><h1 id="intro-title">Simon Qian.</h1><div class="intro-bottom"><a class="intro-link" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a><p>I make apps, websites, and games.<br>I’m a student interested in computer science and design.</p></div></section>
+<header class="work-heading gallery-heading" id="projects" tabindex="-1"><div><h2>Projects</h2><p>Things I’ve been making.</p></div><a class="view-index" href="projects.html">View index <span aria-hidden="true">↗</span></a></header>
 <div class="selected-work">${work}</div>
 <section class="other-work" aria-labelledby="other-heading"><div class="section-heading"><h2 id="other-heading">Other work</h2><a href="https://github.com/masalaempire">Ongoing projects on GitHub ${arrow}</a></div><ul class="project-index">${projects.filter(p=>!p.featured).map(row).join("\n")}</ul></section>
 ${bio}`);
