@@ -65,6 +65,27 @@
     "action": "Play HowLong"
   },
   {
+    "slug": "privacy-checker",
+    "name": "Privacy Checker",
+    "category": "Web tool",
+    "status": "published",
+    "featured": true,
+    "url": "https://privacy.simonlm.one/",
+    "source": "https://github.com/masalaempire/privacychecker",
+    "description": "See what your browser and network reveal when you visit a website.",
+    "image": "assets/privacy-checker.webp",
+    "width": 1964,
+    "height": 1910,
+    "alt": "Privacy Checker showing sample IP details, a world map, and five browser privacy tests.",
+    "caption": "The homepage shows IP details and links to five privacy tests. The screenshot uses sample data.",
+    "intro": "What can a website learn from a visit?",
+    "paragraphs": [
+      "The homepage shows your public IP address, approximate location, and network details. The DNS and WebRTC tests show which resolvers handle requests and which addresses a peer connection can expose.",
+      "The fingerprint page shows browser and device signals a website can read. The private-window demo tries to recognize a browser from those signals, and the VPN test compares your IP location with your browser’s time zone and language region."
+    ],
+    "action": "Open Privacy Checker"
+  },
+  {
     "slug": "masala-empire",
     "name": "Masala Empire",
     "category": "Community website",

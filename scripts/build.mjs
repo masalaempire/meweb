@@ -7,12 +7,14 @@ function render(projects) {
  const featured=projects.filter(p=>p.featured);
  const socials=[["GitHub","https://github.com/masalaempire","@masalaempire"],["YouTube","https://www.youtube.com/@SimonLMLD","@SimonLMLD"],["Instagram","https://www.instagram.com/simonlm0608","@simonlm0608"],["X / Twitter","https://x.com/laomengsi","@laomengsi"],["Reddit","https://www.reddit.com/user/SimonLMLD/","u/SimonLMLD"],["Inara","https://simonlm.space","CMDR SimonLM"]];
  const arrow='<span aria-hidden="true">↗</span>';
- const shell=(title,description,body,{prefix="",active="work",type=""}={})=>`<!doctype html>
+ const shell=(title,description,body,{prefix="",active="work",type=""}={})=>{
+ const [name, alias] = type === "detail-page" ? ["Simon", "SimonLM"] : ["SimonLM", "Simon"];
+ return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${e(title)} — Simon</title>
+<title>${e(title)} — ${name}</title>
 <meta name="description" content="${e(description)}">
 <meta name="theme-color" content="#fafafa">
 <link rel="icon" href="${prefix}favicon.ico">
@@ -22,7 +24,7 @@ function render(projects) {
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="layout">
 <header class="sidebar">
-<a class="name" href="${prefix}index.html">Simon<span>SimonLM</span></a>
+<a class="name" href="${prefix}index.html">${name}<span>${alias}</span></a>
 <p class="sidebar-note">Student.<br>Apps, websites &amp; games.</p>
 <nav aria-label="Main navigation">
 <a href="${prefix}index.html#projects"${active==="work"?' aria-current="page"':""}>Projects</a>
@@ -37,6 +39,7 @@ function render(projects) {
 </body>
 </html>
 `;
+ };
  const photo=(p,prefix="",priority=false)=>`<img src="${prefix}${e(p.image)}" alt="${e(p.alt)}" width="${p.width}" height="${p.height}" ${priority?'fetchpriority="high"':'loading="lazy"'} decoding="async">`;
  const entry=p=>p.featured?`projects/${p.slug}.html`:p.url;
  const row=p=>`<li class="index-row">${p.status==="in-progress"&&!p.url&&!p.featured?`<div class="index-link">`:`<a class="index-link" href="${e(entry(p))}">`}<span class="index-name">${e(p.name)}<span class="index-description">${e(p.description)}</span></span><span class="index-category">${e(p.category)}${p.status==="in-progress"?' <span class="status">In progress</span>':""}</span><span class="index-arrow" aria-hidden="true">${p.status==="in-progress"&&!p.url&&!p.featured?"—":p.featured?"→":"↗"}</span>${p.status==="in-progress"&&!p.url&&!p.featured?"</div>":"</a>"}</li>`;
@@ -47,7 +50,7 @@ function render(projects) {
 <p class="project-summary">${e(p.description)}</p>${p.status==="in-progress"?'<p class="status">In progress</p>':""}
 </article>`).join("\n");
  const files={};
- files["index.html"]=shell("Home","Apps, websites, and games by Simon.",`<section class="landing-intro" aria-labelledby="intro-title"><p class="intro-hello">Hello, I’m</p><h1 id="intro-title">Simon.</h1><div class="intro-bottom"><a class="intro-link" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a><p>I make apps, websites, and games.<br>I’m a student interested in computer science and design.</p></div></section>
+ files["index.html"]=shell("Home","Apps, websites, and games by Simon.",`<section class="landing-intro" aria-labelledby="intro-title"><p class="intro-hello">Hello, I’m</p><h1 id="intro-title">SimonLM.</h1><div class="intro-bottom"><a class="intro-link" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a><p>I make apps, websites, and games.<br>I’m a student interested in computer science and design.</p></div></section>
 <header class="work-heading gallery-heading" id="projects" tabindex="-1"><div><h2>Projects</h2><p>Things I’ve been making.</p></div><a class="view-index" href="projects.html">View index <span aria-hidden="true">↗</span></a></header>
 <div class="selected-work">${work}</div>
 <section class="other-work" aria-labelledby="other-heading"><div class="section-heading"><h2 id="other-heading">Other work</h2><a href="https://github.com/masalaempire">Ongoing projects on GitHub ${arrow}</a></div><ul class="project-index">${projects.filter(p=>!p.featured).map(row).join("\n")}</ul></section>
