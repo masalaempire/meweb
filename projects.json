@@ -86,6 +86,26 @@
     "action": "Open Privacy Checker"
   },
   {
+    "slug": "lumo",
+    "name": "Lumo",
+    "category": "macOS app",
+    "status": "published",
+    "featured": true,
+    "url": "https://github.com/masalaempire/GrokBot-Desktop-Pet",
+    "description": "A macOS desktop pet inspired by the GrokBot design.",
+    "image": "assets/lumo.webp",
+    "width": 310,
+    "height": 318,
+    "alt": "A teal desktop pet with two white eyes and an orange star badge.",
+    "caption": "Lumo with its teal body and orange star badge.",
+    "intro": "A little companion for your Mac.",
+    "paragraphs": [
+      "Lumo blinks and turns toward your cursor. Right-click it to change its shape or color, move it around, or lock it in place.",
+      "You can also connect Lumo to local Codex or ChatGPT Work tasks. A bubble beside the pet shows the current step and lets you know when a task needs your attention."
+    ],
+    "action": "View on GitHub"
+  },
+  {
     "slug": "masala-empire",
     "name": "Masala Empire",
     "category": "Community website",

@@ -47,6 +47,7 @@ h1 { font-size: clamp(46px, 5.8vw, 86px); line-height: 1.04; letter-spacing: -.0
 .project-image.minedhelper { background: #e9e8e4; padding: 6%; }
 .project-image.howlong { background: #eee8df; padding: 6%; }
 .project-image img { width: 100%; }
+.project-image.lumo img { max-width: 310px; margin-inline: auto; }
 a.project-image:hover { outline: 1px solid #aaa; outline-offset: 5px; }
 .project-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; margin-top: 18px; }
 .project-caption h3 { font-size: clamp(23px, 2.2vw, 31px); line-height: 1.15; letter-spacing: -.045em; }
