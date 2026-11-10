@@ -37,17 +37,19 @@ h1 { font-size: clamp(46px, 5.8vw, 86px); line-height: 1.04; letter-spacing: -.0
 .work-heading p { margin-top: 19px; color: var(--muted); font-size: 15px; }
 .view-index { font-size: 13px; flex-shrink: 0; padding-bottom: 3px; }
 .selected-work { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 0 28px; }
-.work { min-width: 0; }
-.work-ontimely { grid-column: 1 / -1; margin-bottom: 94px; }
-.work-minedhelper { grid-column: 1 / 9; margin-bottom: 94px; }
+.work { min-width: 0; grid-column: 1 / -1; margin-bottom: 94px; }
+.work-minedhelper { grid-column: 1 / 9; }
 .work-howlong { grid-column: 5 / -1; margin-bottom: 108px; }
-.work:not(.work-ontimely):not(.work-minedhelper):not(.work-howlong) { grid-column: 1 / -1; margin-bottom: 94px; }
+.work-privacy-checker, .work-lumo { grid-column: span 6; margin-bottom: 64px; }
 .project-image { display: block; background: #eceeef; padding: 7%; }
 .project-image.ontimely { background: #e7ecf0; padding: 6% 11%; }
 .project-image.minedhelper { background: #e9e8e4; padding: 6%; }
 .project-image.howlong { background: #eee8df; padding: 6%; }
 .project-image img { width: 100%; }
 .project-image.lumo img { max-width: 310px; margin-inline: auto; }
+.selected-work .project-image:is(.privacy-checker, .lumo) { height: clamp(176px, 21vw, 264px); padding: 20px; }
+.selected-work .project-image:is(.privacy-checker, .lumo) img { height: 100%; object-fit: contain; }
+.selected-work .project-image.lumo img { max-width: 150px; }
 a.project-image:hover { outline: 1px solid #aaa; outline-offset: 5px; }
 .project-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; margin-top: 18px; }
 .project-caption h3 { font-size: clamp(23px, 2.2vw, 31px); line-height: 1.15; letter-spacing: -.045em; }
@@ -130,6 +132,7 @@ a.index-link:hover .index-name { color: var(--accent); }
  .work-ontimely { margin-bottom: 60px; }
  .work-minedhelper { grid-column: 1 / 12; margin-bottom: 60px; }
  .work-howlong { grid-column: 2 / -1; margin-bottom: 70px; }
+ .work-privacy-checker, .work-lumo { grid-column: 1 / -1; margin-bottom: 50px; }
  .project-caption { gap: 10px; margin-top: 15px; }
  .project-caption h3 { font-size: 24px; }
  .project-caption > span { font-size: 11px; }
